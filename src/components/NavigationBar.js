@@ -1,4 +1,7 @@
-const NavigationBar = () => {
+const NavigationBar = ({
+    isAuthenticated,
+    user,
+}) => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light shadow">
             <div className="container d-flex justify-content-between align-items-center">
