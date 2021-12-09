@@ -1,11 +1,12 @@
 import TopPageInfo from "./components/TopPageInfo";
+import Footer from "./components/Footer";
 
 function App() {
 	return (
 		<div id="main">
 			<TopPageInfo />
 
-
+			<Footer />
 			<script src="/js/jquery-1.11.0.min.js"></script>
 			<script src="/js/jquery-migrate-1.2.1.min.js"></script>
 			<script src="/js/bootstrap.bundle.min.js"></script>
