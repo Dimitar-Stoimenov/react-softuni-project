@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import HighestRatedProductsCard from './HighestRatedProductsCard/HighestRatedProductsCard';
 
 let hardCodedCards = [
-    
+
     ,
     <div className="col-12 col-md-4 mb-4">
         <div className="card h-100">
@@ -70,7 +70,7 @@ const HighestRatedProducts = () => {
                 </div>
                 <div className="row">
 
-
+                    <HighestRatedProductsCard />
                     {hardCodedCards.map(x => x)}
 
                 </div>
