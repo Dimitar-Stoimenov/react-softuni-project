@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import TopPageInfo from "./components/TopPageInfo/TopPageInfo";
 import Footer from "./components/Footer/Footer";
 import NavigationBar from "./components/NavigationBar/NavigationBar";
+import HighestRatedProducts from "./components/HighestRatedProducts/HighestRatedProducts";
 
 function App() {
 	const [userInfo, setUserInfo] = useState({ username: '', isAuthenticated: false, isVendor: false });
@@ -22,10 +23,11 @@ function App() {
 	return (
 		<div id="main">
 			<TopPageInfo />
-
 			<NavigationBar {...userInfo} />
+			<HighestRatedProducts />
 
 			<Routes>
+
 			</Routes>
 
 			<Footer />
