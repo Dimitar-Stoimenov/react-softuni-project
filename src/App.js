@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { Routes, Route } from 'react-router-dom';
 
-import TopPageInfo from "./components/TopPageInfo";
-import Footer from "./components/Footer";
-import NavigationBar from "./components/NavigationBar";
+import TopPageInfo from "./components/TopPageInfo/TopPageInfo";
+import Footer from "./components/Footer/Footer";
+import NavigationBar from "./components/NavigationBar/NavigationBar";
 
 function App() {
 	const [userInfo, setUserInfo] = useState({ username: '', isAuthenticated: false, isVendor: false });
