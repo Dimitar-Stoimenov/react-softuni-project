@@ -62,10 +62,6 @@ const HighestRatedProducts = () => {
                 <div className="row text-center py-3">
                     <div className="col-lg-6 m-auto">
                         <h1 className="h1">Highest Rated Products</h1>
-                        <p>
-                            Reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                            Excepteur sint occaecat cupidatat non proident.
-                        </p>
                     </div>
                 </div>
                 <div className="row">
