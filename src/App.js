@@ -5,6 +5,7 @@ import TopPageInfo from "./components/TopPageInfo/TopPageInfo";
 import Footer from "./components/Footer/Footer";
 import NavigationBar from "./components/NavigationBar/NavigationBar";
 import HighestRatedProducts from "./components/HighestRatedProducts/HighestRatedProducts";
+import MainPicture from "./components/MainPicture/MainPicture";
 
 function App() {
 	const [userInfo, setUserInfo] = useState({ username: '', isAuthenticated: false, isVendor: false });
@@ -24,6 +25,8 @@ function App() {
 		<div id="main">
 			<TopPageInfo />
 			<NavigationBar {...userInfo} />
+
+			<MainPicture />
 			<HighestRatedProducts />
 
 			<Routes>
