@@ -20,6 +20,9 @@ const VendorNavigation = ({
                     <li className="nav-item">
                         <Link className="nav-link" to="/contact">Contact</Link>
                     </li>
+                    <li className="nav-item bg-light rounded-pill">
+                        <Link className="nav-link" to="/logout">Logout</Link>
+                    </li>
                 </ul>
             </div>
             <div className="navbar align-self-center d-flex">
