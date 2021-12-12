@@ -17,9 +17,7 @@ const UserNavigation = ({
                     <li className="nav-item">
                         <Link className="nav-link" to="/catalog">Catalog</Link>
                     </li>
-                    <li className="nav-item">
-                        <Link className="nav-link" to="/contact">Contact</Link>
-                    </li>
+                   
                     <li className="nav-item">
                         <Link className="nav-link" to={`/profile/${user.id}/orders`}>My Orders</Link>
                     </li>

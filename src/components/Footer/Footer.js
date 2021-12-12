@@ -23,26 +23,11 @@ const Footer = () => {
                     </div>
 
                     <div className="col-md-4 pt-5">
-                        <h2 className="h2 text-light border-bottom pb-3 border-light">Products</h2>
-                        <ul className="list-unstyled text-light footer-link-list">
-                            <li><a className="text-decoration-none" href="#">Luxury</a></li>
-                            <li><a className="text-decoration-none" href="#">Sport Wear</a></li>
-                            <li><a className="text-decoration-none" href="#">Men's Shoes</a></li>
-                            <li><a className="text-decoration-none" href="#">Women's Shoes</a></li>
-                            <li><a className="text-decoration-none" href="#">Popular Dress</a></li>
-                            <li><a className="text-decoration-none" href="#">Gym Accessories</a></li>
-                            <li><a className="text-decoration-none" href="#">Sport Shoes</a></li>
-                        </ul>
-                    </div>
-
-                    <div className="col-md-4 pt-5">
                         <h2 className="h2 text-light border-bottom pb-3 border-light">Further Info</h2>
                         <ul className="list-unstyled text-light footer-link-list">
-                            <li><a className="text-decoration-none" href="#">Home</a></li>
-                            <li><a className="text-decoration-none" href="#">About Us</a></li>
-                            <li><a className="text-decoration-none" href="#">Shop Locations</a></li>
-                            <li><a className="text-decoration-none" href="#">FAQs</a></li>
-                            <li><a className="text-decoration-none" href="#">Contact</a></li>
+                            <li><a className="text-decoration-none" href="/">Home</a></li>
+                            <li><a className="text-decoration-none" href="/about">About Us</a></li>
+                            <li><a className="text-decoration-none" href="/contacts">Contact Us</a></li>
                         </ul>
                     </div>
 
