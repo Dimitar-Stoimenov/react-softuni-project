@@ -57,6 +57,17 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
+            <div className="w-100 bg-black py-3">
+                <div className="container">
+                    <div>
+                        <div className="col-12">
+                            <p className="text-left text-light">
+                                Copyright &copy; 2021 Zay Ltd.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </footer>
     )
 }
