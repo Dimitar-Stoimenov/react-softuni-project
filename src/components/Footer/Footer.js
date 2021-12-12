@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
     return (
         <footer className="bg-dark" id="tempaltemo_footer">
@@ -25,9 +27,9 @@ const Footer = () => {
                     <div className="col-md-4 pt-5">
                         <h2 className="h2 text-light border-bottom pb-3 border-light">Further Info</h2>
                         <ul className="list-unstyled text-light footer-link-list">
-                            <li><a className="text-decoration-none" href="/">Home</a></li>
-                            <li><a className="text-decoration-none" href="/about">About Us</a></li>
-                            <li><a className="text-decoration-none" href="/contacts">Contact Us</a></li>
+                            <li><Link className="text-decoration-none" to="/">Home</Link></li>
+                            <li><Link className="text-decoration-none" to="/about">About Us</Link></li>
+                            <li><Link className="text-decoration-none" to="/contacts">Contact Us</Link></li>
                         </ul>
                     </div>
 
@@ -53,11 +55,8 @@ const Footer = () => {
                             </li>
                         </ul>
                     </div>
-                    
                 </div>
             </div>
-
-
         </footer>
     )
 }
