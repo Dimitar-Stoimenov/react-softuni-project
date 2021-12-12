@@ -4,8 +4,9 @@ import { Routes, Route } from 'react-router-dom';
 import TopPageInfo from "./components/TopPageInfo/TopPageInfo";
 import Footer from "./components/Footer/Footer";
 import NavigationBar from "./components/NavigationBar/NavigationBar";
-import HighestRatedProducts from "./components/HighestRatedProducts/HighestRatedProducts";
+import BestSellers from "./components/BestSellers/BestSellers";
 import MainPicture from "./components/MainPicture/MainPicture";
+import Categories from "./components/Categories/Categories";
 
 function App() {
 	const [userInfo, setUserInfo] = useState({ username: '', isAuthenticated: false, isVendor: false });
@@ -27,7 +28,8 @@ function App() {
 			<NavigationBar {...userInfo} />
 
 			<MainPicture />
-			<HighestRatedProducts />
+			<Categories />
+			<BestSellers />
 
 			<Routes>
 

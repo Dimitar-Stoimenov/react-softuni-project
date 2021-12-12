@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const HighestRatedProductsCard = ({
+const BestSellersCard = ({
 
 }) => {
 
@@ -32,4 +32,4 @@ const HighestRatedProductsCard = ({
     );
 };
 
-export default HighestRatedProductsCard;
+export default BestSellersCard;

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import HighestRatedProductsCard from './HighestRatedProductsCard/HighestRatedProductsCard';
+import BestSellersCard from './BestSellersCard/BestSellersCard';
 
 let hardCodedCards = [
 
@@ -55,18 +55,18 @@ let hardCodedCards = [
     </div>
 ];
 
-const HighestRatedProducts = () => {
+const BestSellers = () => {
     return (
         <section className="bg-light">
             <div className="container py-5">
                 <div className="row text-center py-3">
                     <div className="col-lg-6 m-auto">
-                        <h1 className="h1">Highest Rated Products</h1>
+                        <h1 className="h1">Best Sellers</h1>
                     </div>
                 </div>
                 <div className="row">
 
-                    <HighestRatedProductsCard />
+                    <BestSellersCard />
                     {hardCodedCards.map(x => x)}
 
                 </div>
@@ -75,4 +75,4 @@ const HighestRatedProducts = () => {
     );
 };
 
-export default HighestRatedProducts;
+export default BestSellers;
