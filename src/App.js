@@ -38,7 +38,6 @@ function App() {
 			<Footer />
 			<script src="/js/bootstrap.bundle.min.js"></script>
 			<script src="/js/templatemo.js"></script>
-			<script src="/js/custom.js"></script>
 		</div>
 	);
 }
