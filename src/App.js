@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Routes, Route } from 'react-router-dom';
 
+import { AuthContext } from './contexts/authContext';
 import TopPageInfo from "./components/TopPageInfo/TopPageInfo";
 import Footer from "./components/Footer/Footer";
 import NavigationBar from "./components/NavigationBar/NavigationBar";
@@ -9,36 +10,42 @@ import MainPicture from "./components/MainPicture/MainPicture";
 import Categories from "./components/Categories/Categories";
 
 function App() {
-	const [userInfo, setUserInfo] = useState({ username: '', isAuthenticated: false, isVendor: false });
+	const [user, setUser] = useState(
+		{
+			_id: '',
+			username: '',
+			isVendor: false,
+		}
+	);
 
-	useEffect(() => {
-		let user = null; /*authService.getUser();*/
+	const login = (authData) => {
+		setUser(authData);
+	};
 
-		setUserInfo({
-			user,
-			isAuthenticated: Boolean(user),
-			isVendor: Boolean(user?.isVendor)
-		})
-	}, []);
-
+	const onLogout = () => {
+		// TODO: implement
+	};
 
 	return (
-		<div id="main">
-			<TopPageInfo />
-			<NavigationBar {...userInfo} />
+		<AuthContext.Provider value={{ user, login }}>
 
-			<MainPicture />
-			<Categories />
-			<BestSellers />
+			<div id="main">
+				<TopPageInfo />
+				<NavigationBar {...user} />
 
-			<Routes>
+				<MainPicture />
+				<Categories />
+				<BestSellers />
 
-			</Routes>
+				<Routes>
 
-			<Footer />
-			<script src="/js/bootstrap.bundle.min.js"></script>
-			<script src="/js/templatemo.js"></script>
-		</div>
+				</Routes>
+
+				<Footer />
+				<script src="/js/bootstrap.bundle.min.js"></script>
+				<script src="/js/templatemo.js"></script>
+			</div>
+		</AuthContext.Provider>
 	);
 }
 
