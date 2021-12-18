@@ -1,8 +1,9 @@
+import { useContext } from 'react';
+import { AuthContext } from '../../../contexts/AuthContext';
 import { Link } from 'react-router-dom';
 
-const VendorNavigation = ({
-    user,
-}) => {
+const VendorNavigation = () => {
+    const { user } = useContext(AuthContext);
 
     return (
         <div className="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
@@ -17,15 +18,15 @@ const VendorNavigation = ({
                     <li className="nav-item">
                         <Link className="nav-link" to="/my-items">My Items</Link>
                     </li>
-                    
+
                     <li className="nav-item bg-light rounded-pill">
                         <Link className="nav-link" to="/logout">Logout</Link>
                     </li>
                 </ul>
             </div>
             <div className="navbar align-self-center d-flex">
-                
-                <Link className="nav-icon position-relative text-decoration-none" to={`/profile/${user.id}`}>
+
+                <Link className="nav-icon position-relative text-decoration-none" to={`/profile/${user._id}`}>
                     <i className="fa fa-fw fa-user text-dark mr-3"></i>
                     <span className="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
                 </Link>
