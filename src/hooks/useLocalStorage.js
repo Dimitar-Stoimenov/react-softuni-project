@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const userLocalStorage = (key, initialValue) => {
+const useLocalStorage = (key, initialValue) => {
     const [state, setState] = useState(() => {
         try {
             let item = localStorage.getItem(key);
@@ -30,4 +30,4 @@ const userLocalStorage = (key, initialValue) => {
     ];
 };
 
-export default userLocalStorage;
+export default useLocalStorage;

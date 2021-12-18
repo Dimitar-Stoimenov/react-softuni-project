@@ -2,34 +2,36 @@ import { useState, useEffect } from "react";
 import { Routes, Route } from 'react-router-dom';
 
 import { AuthContext } from './contexts/AuthContext';
+import useLocalStorage from "./hooks/useLocalStorage";
 import TopPageInfo from "./components/TopPageInfo/TopPageInfo";
 import Footer from "./components/Footer/Footer";
 import Login from "./components/Login/Login";
+import Logout from "./components/Logout/Logout";
 import Register from "./components/Register/Register";
 import NavigationBar from "./components/NavigationBar/NavigationBar";
 import BestSellers from "./components/BestSellers/BestSellers";
 import MainPicture from "./components/MainPicture/MainPicture";
 import Categories from "./components/Categories/Categories";
 
+const initialAuthState = {
+	_id: '',
+	email: '',
+	accessToken: '',
+};
+
 function App() {
-	const [user, setUser] = useState(
-		{
-			_id: '',
-			email: '',
-			isVendor: false,
-		}
-	);
+	const [user, setUser] = useLocalStorage('user', initialAuthState);
 
 	const login = (authData) => {
 		setUser(authData);
 	};
 
-	const onLogout = () => {
-		// TODO: implement
+	const logout = () => {
+		setUser(initialAuthState);
 	};
 
 	return (
-		<AuthContext.Provider value={{ user, login }}>
+		<AuthContext.Provider value={{ user, login, logout }}>
 
 			<div id="main">
 				<TopPageInfo />
@@ -46,6 +48,7 @@ function App() {
 						}
 					/>
 					<Route path="/login" element={<Login />} />
+					<Route path="/logout" element={<Logout />} />
 					<Route path="/register" element={<Register />} />
 				</Routes>
 
