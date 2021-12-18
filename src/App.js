@@ -5,6 +5,7 @@ import { AuthContext } from './contexts/AuthContext';
 import TopPageInfo from "./components/TopPageInfo/TopPageInfo";
 import Footer from "./components/Footer/Footer";
 import Login from "./components/Login/Login";
+import Register from "./components/Register/Register";
 import NavigationBar from "./components/NavigationBar/NavigationBar";
 import BestSellers from "./components/BestSellers/BestSellers";
 import MainPicture from "./components/MainPicture/MainPicture";
@@ -45,6 +46,7 @@ function App() {
 						}
 					/>
 					<Route path="/login" element={<Login />} />
+					<Route path="/register" element={<Register />} />
 				</Routes>
 
 				<Footer />
