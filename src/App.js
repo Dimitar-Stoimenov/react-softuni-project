@@ -5,6 +5,7 @@ import { AuthContext } from './contexts/AuthContext';
 import useLocalStorage from "./hooks/useLocalStorage";
 import TopPageInfo from "./components/TopPageInfo/TopPageInfo";
 import Footer from "./components/Footer/Footer";
+import Contact from "./components/Contact/Contact";
 import Login from "./components/Login/Login";
 import Logout from "./components/Logout/Logout";
 import Register from "./components/Register/Register";
@@ -54,6 +55,7 @@ function App() {
 					<Route path="/catalog/accessories" element={<>accessorie component</>} />
 					<Route path="/login" element={<Login />} />
 					<Route path="/logout" element={<Logout />} />
+					<Route path="/contact" element={<Contact />} />
 					<Route path="/register" element={<Register />} />
 				</Routes>
 

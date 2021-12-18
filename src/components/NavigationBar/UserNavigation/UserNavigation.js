@@ -13,12 +13,12 @@ const UserNavigation = () => {
                         <Link className="nav-link" to="/">Home</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/about">About</Link>
-                    </li>
-                    <li className="nav-item">
                         <Link className="nav-link" to="/catalog">Catalog</Link>
                     </li>
-
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/contact">Contact Us</Link>
+                    </li>
+                    <p></p>
                     <li className="nav-item">
                         <Link className="nav-link" to={`/profile/${user._id}/orders`}>My Orders</Link>
                     </li>
