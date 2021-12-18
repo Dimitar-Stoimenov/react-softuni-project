@@ -35,10 +35,10 @@ const Login = () => {
                 <form onSubmit={onLoginHandler} className="col-md-9 m-auto" method="POST" role="form">
                     <div className="row">
                         <div class="form-group">
-                            <input class="form-control" autoFocus placeholder="e-mail" name="email" type="text" />
+                            <input class="form-control" autoFocus placeholder="E-mail" name="email" type="text" />
                         </div>
                         <div class="form-group">
-                            <input class="form-control" placeholder="password" name="password" type="password" />
+                            <input class="form-control" placeholder="Password" name="password" type="password" />
                         </div>
                     </div>
 

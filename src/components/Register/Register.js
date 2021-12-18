@@ -35,20 +35,20 @@ const Register = () => {
                 <form className="col-md-9 m-auto" method="POST" role="form">
                     <div className="row">
                         <div class="form-group">
-                            <input class="form-control" autoFocus placeholder="e-mail" name="email" type="text" />
+                            <input class="form-control" autoFocus placeholder="E-mail" name="email" type="text" />
                         </div>
                         <div class="form-group">
-                            <input class="form-control" placeholder="password" name="password" type="password" />
+                            <input class="form-control" placeholder="Password" name="password" type="password" />
                         </div>
                         <div class="form-group">
-                            <input class="form-control" placeholder="repeat password" name="repass" type="password" />
+                            <input class="form-control" placeholder="Repeat password" name="repass" type="password" />
                         </div>
                     </div>
 
                     <div class="checkbox">
 			    	    	<label>
                                 <p></p>
-			    	    		<input name="vendor" type="checkbox"/> Register as a vendor?
+			    	    		<input name="vendor" type="checkbox"/> Register as a vendor
 			    	    	</label>
 			    	    </div>
 
