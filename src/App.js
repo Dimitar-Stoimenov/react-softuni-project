@@ -13,6 +13,7 @@ import NavigationBar from "./components/NavigationBar/NavigationBar";
 import BestSellers from "./components/BestSellers/BestSellers";
 import MainPicture from "./components/MainPicture/MainPicture";
 import Categories from "./components/Categories/Categories";
+import MessageReceived from "./components/Contact/MessageReceived/MessageReceived";
 
 const initialAuthState = {
 	_id: '',
@@ -56,6 +57,7 @@ function App() {
 					<Route path="/login" element={<Login />} />
 					<Route path="/logout" element={<Logout />} />
 					<Route path="/contact" element={<Contact />} />
+					<Route path="/contact/message-received" element={<MessageReceived />} />
 					<Route path="/register" element={<Register />} />
 				</Routes>
 
