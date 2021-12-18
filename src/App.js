@@ -34,7 +34,6 @@ function App() {
 				<TopPageInfo />
 				<NavigationBar />
 
-
 				<Routes>
 					<Route path="/"
 						element={
