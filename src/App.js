@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { Routes, Route } from 'react-router-dom';
 
-import { AuthContext } from './contexts/authContext';
+import { AuthContext } from './contexts/AuthContext';
 import TopPageInfo from "./components/TopPageInfo/TopPageInfo";
 import Footer from "./components/Footer/Footer";
+import Login from "./components/Login/Login";
 import NavigationBar from "./components/NavigationBar/NavigationBar";
 import BestSellers from "./components/BestSellers/BestSellers";
 import MainPicture from "./components/MainPicture/MainPicture";
@@ -38,7 +39,7 @@ function App() {
 				<BestSellers />
 
 				<Routes>
-
+					<Route path="/login" element={<Login />} />
 				</Routes>
 
 				<Footer />
