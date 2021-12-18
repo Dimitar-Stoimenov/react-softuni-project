@@ -13,7 +13,7 @@ function App() {
 	const [user, setUser] = useState(
 		{
 			_id: '',
-			username: '',
+			email: '',
 			isVendor: false,
 		}
 	);
