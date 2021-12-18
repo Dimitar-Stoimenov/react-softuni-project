@@ -34,11 +34,11 @@ const Login = () => {
             <div className="col-md-4 col-md-offset-4">
                 <form onSubmit={onLoginHandler} className="col-md-9 m-auto" method="POST" role="form">
                     <div className="row">
-                        <div class="form-group">
-                            <input class="form-control" autoFocus placeholder="E-mail" name="email" type="text" />
+                        <div className="form-group">
+                            <input className="form-control" autoFocus placeholder="E-mail" name="email" type="text" />
                         </div>
-                        <div class="form-group">
-                            <input class="form-control" placeholder="Password" name="password" type="password" />
+                        <div className="form-group">
+                            <input className="form-control" placeholder="Password" name="password" type="password" />
                         </div>
                     </div>
 
