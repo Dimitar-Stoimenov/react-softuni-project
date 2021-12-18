@@ -57,7 +57,7 @@ let hardCodedCards = [
 
 const BestSellers = () => {
     return (
-        <section className="bg-light">
+        <section>
             <div className="container py-5">
                 <div className="row text-center py-3">
                     <div className="col-lg-6 m-auto">
