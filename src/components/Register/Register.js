@@ -1,54 +1,46 @@
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { AuthContext } from '../../contexts/AuthContext';
-
 import * as authService from '../../services/authService';
+import { AuthContext } from '../../contexts/AuthContext';
 
 const Register = () => {
     const { login } = useContext(AuthContext);
     const navigate = useNavigate();
 
-    // const onLoginHandler = (e) => {
-    //     e.preventDefault();
+    const registerSubmitHandler = (e) => {
+        e.preventDefault();
 
-    //     let formData = new FormData(e.currentTarget);
+        let { email, password, isVendor } = Object.fromEntries(new FormData(e.currentTarget));
 
-    //     let email = formData.get('email');
-    //     let password = formData.get('password');
-
-    //     authService.login(email, password)
-    //         .then((authData) => {
-    //             login(authData);
-
-    //             navigate('/catalog');
-    //         })
-    //         .catch(err => {
-    //             //TODO: show notification
-    //             console.log(err.message);
-    //         })
-    // };
+        authService.register(email, password, isVendor)
+            .then(authData => {
+                login(authData);
+                
+                navigate('/catalog');
+            });
+    };
 
     return (
         <div className="container py-5">
             <div className="col-md-4 col-md-offset-4">
-                <form className="col-md-9 m-auto" method="POST" role="form">
+                <form className="col-md-9 m-auto" method="POST" onSubmit={registerSubmitHandler}>
                     <div className="row">
-                        <div class="form-group">
-                            <input class="form-control" autoFocus placeholder="E-mail" name="email" type="text" />
+                        <div className="form-group">
+                            <input className="form-control" autoFocus placeholder="E-mail" name="email" type="text" />
                         </div>
-                        <div class="form-group">
-                            <input class="form-control" placeholder="Password" name="password" type="password" />
+                        <div className="form-group">
+                            <input className="form-control" placeholder="Password" name="password" type="password" />
                         </div>
-                        <div class="form-group">
-                            <input class="form-control" placeholder="Repeat password" name="repass" type="password" />
+                        <div className="form-group">
+                            <input className="form-control" placeholder="Repeat password" name="repass" type="password" />
                         </div>
                     </div>
 
-                    <div class="checkbox">
+                    <div className="checkbox">
 			    	    	<label>
                                 <p></p>
-			    	    		<input name="vendor" type="checkbox"/> Register as a vendor
+			    	    		<input name="isVendor" type="checkbox"/> Register as a vendor
 			    	    	</label>
 			    	    </div>
 
