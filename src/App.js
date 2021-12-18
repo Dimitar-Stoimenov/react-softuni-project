@@ -47,6 +47,9 @@ function App() {
 						}
 					/>
 					<Route path="/catalog" element={<Categories />} />
+					<Route path="/catalog/smartphones" element={<>smartphone component</>} />
+					<Route path="/catalog/smartwatches" element={<>smartwatch component</>} />
+					<Route path="/catalog/accessories" element={<>accessorie component</>} />
 					<Route path="/login" element={<Login />} />
 					<Route path="/logout" element={<Logout />} />
 					<Route path="/register" element={<Register />} />
