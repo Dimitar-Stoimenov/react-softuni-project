@@ -23,7 +23,9 @@ function App() {
 	const [user, setUser] = useLocalStorage('user', initialAuthState);
 
 	const login = (authData) => {
-		setUser(authData);
+		let { accessToken, email, _id, isVendor } = authData;
+
+		setUser({ accessToken, email, _id, isVendor });
 	};
 
 	const logout = () => {
