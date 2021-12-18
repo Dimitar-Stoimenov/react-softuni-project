@@ -32,13 +32,19 @@ function App() {
 
 			<div id="main">
 				<TopPageInfo />
-				<NavigationBar {...user} />
+				<NavigationBar />
 
-				<MainPicture />
-				<Categories />
-				<BestSellers />
 
 				<Routes>
+					<Route path="/"
+						element={
+							<>
+								<MainPicture />
+								<Categories />
+								<BestSellers />
+							</>
+						}
+					/>
 					<Route path="/login" element={<Login />} />
 				</Routes>
 
