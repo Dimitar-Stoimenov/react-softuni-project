@@ -36,14 +36,12 @@ export const register = async (email, password) => {
     }
 };
 
-export const logout = () => fetch(`${url}/logout`);
-
-// export const getUser = () => {
-//     let username = localStorage.getItem('username');
-
-//     return username;
-// };
-
-// export const isAuthenticated = () => {
-//     return Boolean(getUser());
-// };
+export const logout = (token) => {
+    return fetch(`${url}/logout`, {
+        method: 'GET',
+        headers: {
+            "Content-Type": 'application/json',
+            'X-Authorization': token,
+        }
+    })
+};
