@@ -9,7 +9,7 @@ export const login = async (email, password) => {
         body: JSON.stringify({ email, password })
     })
 
-    return errorCheck(res);
+    return await errorCheck(res);
 };
 
 export const register = async (email, password, isVendor) => {
@@ -21,7 +21,7 @@ export const register = async (email, password, isVendor) => {
         body: JSON.stringify({ email, password, isVendor }),
     })
 
-    return errorCheck(res);
+    return await errorCheck(res);
 };
 
 export const logout = (token) => {
