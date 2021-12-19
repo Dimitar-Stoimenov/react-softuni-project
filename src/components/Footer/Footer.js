@@ -11,7 +11,7 @@ const Footer = () => {
                         <ul className="list-unstyled text-light footer-link-list">
                             <li>
                                 <i className="fas fa-map-marker-alt fa-fw"></i>
-                                123 Consectetur at ligula 10660
+                                78 Aleksandar Malinov Blvd., 1799 Sofia, Bulgaria
                             </li>
                             <li>
                                 <i className="fa fa-phone fa-fw"></i>
