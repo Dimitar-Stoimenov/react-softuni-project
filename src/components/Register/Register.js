@@ -23,7 +23,7 @@ const Register = () => {
             .then(authData => {
                 login(authData);
 
-                navigate('/catalog');
+                navigate('/');
             });
     };
 
