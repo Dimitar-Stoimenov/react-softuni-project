@@ -9,13 +9,7 @@ export const login = async (email, password) => {
         body: JSON.stringify({ email, password })
     })
 
-    let jsonResult = await res.json();
-
-    if (res.ok) {
-        return jsonResult;
-    } else {
-        throw jsonResult;
-    }
+    return errorCheck(res);
 };
 
 export const register = async (email, password, isVendor) => {
@@ -27,13 +21,7 @@ export const register = async (email, password, isVendor) => {
         body: JSON.stringify({ email, password, isVendor }),
     })
 
-    let jsonResult = await res.json();
-
-    if (res.ok) {
-        return jsonResult;
-    } else {
-        throw jsonResult;
-    }
+    return errorCheck(res);
 };
 
 export const logout = (token) => {
@@ -45,3 +33,22 @@ export const logout = (token) => {
         }
     })
 };
+
+async function errorCheck(response) {
+    try {
+        if (response.ok == false) {
+            const error = await response.json();
+            throw new Error(error.message);
+        }
+
+        try {
+            const data = await response.json();
+            return data;
+        } catch (err) {
+            return response;
+        }
+    } catch (err) {
+        alert(err.message);
+        throw err;
+    }
+}
