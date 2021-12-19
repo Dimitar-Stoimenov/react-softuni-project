@@ -11,7 +11,7 @@ import Login from "./components/Login/Login";
 import Logout from "./components/Logout/Logout";
 import Register from "./components/Register/Register";
 import NavigationBar from "./components/NavigationBar/NavigationBar";
-import BestSellers from "./components/BestSellers/BestSellers";
+import MostPopularProducts from "./components/MostPopularProducts/MostPopularProducts";
 import MainPicture from "./components/MainPicture/MainPicture";
 import Categories from "./components/Categories/Categories";
 import MessageReceived from "./components/Contact/MessageReceived/MessageReceived";
@@ -47,7 +47,7 @@ function App() {
 						element={
 							<>
 								<MainPicture />
-								<BestSellers />
+								<MostPopularProducts />
 							</>
 						}
 					/>
