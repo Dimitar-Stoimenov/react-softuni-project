@@ -13,10 +13,16 @@ const Register = () => {
 
         let { email, password, isVendor } = Object.fromEntries(new FormData(e.currentTarget));
 
+        if (isVendor) {
+            isVendor = true;
+        } else {
+            isVendor = false;
+        }
+
         authService.register(email, password, isVendor)
             .then(authData => {
                 login(authData);
-                
+
                 navigate('/catalog');
             });
     };
@@ -38,11 +44,11 @@ const Register = () => {
                     </div>
 
                     <div className="checkbox">
-			    	    	<label>
-                                <p></p>
-			    	    		<input name="isVendor" type="checkbox"/> Register as a vendor
-			    	    	</label>
-			    	    </div>
+                        <label>
+                            <p></p>
+                            <input name="isVendor" type="checkbox" /> Register as a vendor
+                        </label>
+                    </div>
 
                     <div className="row">
                         <div className="col text-start mt-2">
