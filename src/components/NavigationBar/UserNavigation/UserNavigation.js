@@ -34,6 +34,7 @@ const UserNavigation = () => {
                 </Link>
                 <Link className="nav-icon position-relative text-decoration-none" to={`/profile/${user._id}`}>
                     <i className="fa fa-fw fa-user text-dark mr-3"></i>
+                    <span>  {user.email}</span>
                     <span className="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
                 </Link>
             </div>
