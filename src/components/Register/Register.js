@@ -13,6 +13,12 @@ const Register = () => {
 
         let { email, password, repass, isVendor } = Object.fromEntries(new FormData(e.currentTarget));
 
+        let regex = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
+
+        if (!regex.test(email)) {
+            return alert('Invalid email address')
+        }
+
         if (password !== repass) {
             return alert('Passwords don\'t match!');
         }
