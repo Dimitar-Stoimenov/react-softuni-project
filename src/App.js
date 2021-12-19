@@ -6,6 +6,7 @@ import useLocalStorage from "./hooks/useLocalStorage";
 import TopPageInfo from "./components/TopPageInfo/TopPageInfo";
 import Footer from "./components/Footer/Footer";
 import Contact from "./components/Contact/Contact";
+import Create from "./components/Create/Create";
 import Login from "./components/Login/Login";
 import Logout from "./components/Logout/Logout";
 import Register from "./components/Register/Register";
@@ -55,6 +56,7 @@ function App() {
 					<Route path="/catalog/smartwatches" element={<>smartwatch component</>} />
 					<Route path="/catalog/accessories" element={<>accessorie component</>} />
 					<Route path="/login" element={<Login />} />
+					<Route path="/create" element={<Create />} />
 					<Route path="/logout" element={<Logout />} />
 					<Route path="/contact" element={<Contact />} />
 					<Route path="/contact/message-received" element={<MessageReceived />} />
