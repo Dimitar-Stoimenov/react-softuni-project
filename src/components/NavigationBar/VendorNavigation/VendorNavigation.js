@@ -13,10 +13,10 @@ const VendorNavigation = () => {
                         <Link className="nav-link" to="/">Home</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/create">Create Item</Link>
+                        <Link className="nav-link" to="/create">Create Product</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/my-items">My Items</Link>
+                        <Link className="nav-link" to="/my-items">My Products</Link>
                     </li>
                     <p></p>
                     <li className="nav-item bg-light rounded-pill">
