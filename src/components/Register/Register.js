@@ -11,7 +11,11 @@ const Register = () => {
     const registerSubmitHandler = (e) => {
         e.preventDefault();
 
-        let { email, password, isVendor } = Object.fromEntries(new FormData(e.currentTarget));
+        let { email, password, repass, isVendor } = Object.fromEntries(new FormData(e.currentTarget));
+
+        if (password !== repass) {
+            return alert('Passwords don\'t match!');
+        }
 
         if (isVendor) {
             isVendor = true;
