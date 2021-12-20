@@ -54,9 +54,6 @@ function App() {
 						}
 					/>
 					<Route path="/catalog" element={<Catalog />} />
-					<Route path="/catalog/smartphones" element={<>smartphone component</>} />
-					<Route path="/catalog/smartwatches" element={<>smartwatch component</>} />
-					<Route path="/catalog/accessories" element={<>accessorie component</>} />
 					<Route path="/login" element={<Login />} />
 					<Route path="/create" element={<Create />} />
 					<Route path="/logout" element={<Logout />} />
