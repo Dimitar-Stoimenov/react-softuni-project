@@ -28,16 +28,14 @@ const CatalogCard = () => {
                             <span className="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
                         </li>
                     </ul>
-                    <ul className="list-unstyled d-flex justify-content-center mb-1">
-                        <li>
-                            <i className="text-warning fa fa-star"></i>
-                            <i className="text-warning fa fa-star"></i>
-                            <i className="text-warning fa fa-star"></i>
-                            <i className="text-muted fa fa-star"></i>
-                            <i className="text-muted fa fa-star"></i>
-                        </li>
-                    </ul>
                     <p className="text-center mb-0">$250.00</p>
+                </div>
+
+                <div class="card-body">
+                    <p href="shop-single.html" class="h3 text-decoration-none">Oupidatat non</p>
+                    <tc class="float-start">$250.00</tc><tc class="text-muted float-end">Liked by 11 poeple</tc>
+
+
                 </div>
             </div>
         </div>
