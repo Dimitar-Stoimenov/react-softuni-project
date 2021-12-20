@@ -1,7 +1,19 @@
 import { Link } from "react-router-dom";
 
-const Create = () => {
+import { useState, useEffect } from "react";
+import { getAll } from "../../services/productService";
 
+import CatalogCard from "./CatalogCard/CatalogCard";
+
+const Create = () => {
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        getAll()
+            .then(result => {
+                setProducts(result);
+            })
+    }, [])
 
     return (
         <div className="container py-5">
@@ -49,7 +61,7 @@ const Create = () => {
                 <div className="col-lg-9">
 
                     <div className="row">
-                        //TODO add card
+                        {products.map(x => <CatalogCard key={x._id} item={x} />)}
                     </div>
 
                 </div>
