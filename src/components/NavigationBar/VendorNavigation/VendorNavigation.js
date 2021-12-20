@@ -16,7 +16,7 @@ const VendorNavigation = () => {
                         <Link className="nav-link" to="/create">Create Product</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/my-items">My Products</Link>
+                        <Link className="nav-link" to="/my-products">My Products</Link>
                     </li>
                     <p></p>
                     <li className="nav-item bg-light rounded-pill">

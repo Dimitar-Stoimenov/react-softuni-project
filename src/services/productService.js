@@ -19,6 +19,18 @@ export async function getAll() {
     return await errorCheck(res);
 }
 
+export async function getMyProducts(token) {
+    let res = await fetch(`${url}/my-products`, {
+        method: 'GET',
+        headers: {
+            "Content-Type": 'application/json',
+            'X-Authorization': token,
+        },
+    });
+
+    return await errorCheck(res);
+}
+
 export async function getMostPopular() {
     let res = await fetch(`${url}/most-popular`);
 

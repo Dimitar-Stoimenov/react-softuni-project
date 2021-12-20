@@ -13,6 +13,7 @@ import Register from "./components/Register/Register";
 import NavigationBar from "./components/NavigationBar/NavigationBar";
 import MostPopularProducts from "./components/MostPopularProducts/MostPopularProducts";
 import MainPicture from "./components/MainPicture/MainPicture";
+import MyProducts from "./components/MyProducts/MyProducts";
 import Categories from "./components/Categories/Categories";
 import Contact from "./components/Contact/Contact";
 import MessageReceived from "./components/Contact/MessageReceived/MessageReceived";
@@ -54,12 +55,13 @@ function App() {
 						}
 					/>
 					<Route path="/catalog" element={<Catalog />} />
-					<Route path="/login" element={<Login />} />
 					<Route path="/create" element={<Create />} />
-					<Route path="/logout" element={<Logout />} />
+					<Route path="/my-products" element={<MyProducts />} />
 					<Route path="/contact" element={<Contact />} />
 					<Route path="/contact/message-received" element={<MessageReceived />} />
 					<Route path="/register" element={<Register />} />
+					<Route path="/login" element={<Login />} />
+					<Route path="/logout" element={<Logout />} />
 				</Routes>
 
 				<Footer />
