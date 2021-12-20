@@ -5,7 +5,13 @@ const Contact = () => {
     const buttonClick = (e) => {
         e.preventDefault();
 
-        navigate('/contact/message-received');
+        let { name, email, subject, message } = Object.fromEntries(new FormData(e.currentTarget));
+
+        if (name == "" || email == "" || subject == '' || message == '') {
+            return alert('All fields are required!')
+        } else {
+            navigate('/contact/message-received');
+        }
     }
 
     return (
