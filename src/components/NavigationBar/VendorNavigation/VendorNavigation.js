@@ -26,11 +26,11 @@ const VendorNavigation = () => {
             </div>
             <div className="navbar align-self-center d-flex">
 
-                <Link className="nav-icon position-relative text-decoration-none" to={`/profile/${user._id}`}>
+                <span className="nav-icon position-relative text-decoration-none">
                     <i className="fa fa-fw fa-user text-dark mr-3"></i>
                     <span>  {user.email}</span>
                     <span className="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
-                </Link>
+                </span>
             </div>
         </div>
     );
