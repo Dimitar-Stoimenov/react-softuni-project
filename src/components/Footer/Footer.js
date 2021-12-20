@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+    const onClick = (e) => {
+        window.scrollTo(0, 0);
+    }
+
     return (
         <footer className="bg-dark" id="tempaltemo_footer">
             <div className="container">
@@ -27,8 +31,8 @@ const Footer = () => {
                     <div className="col-md-4 pt-5">
                         <h2 className="h2 text-light border-bottom pb-3 border-light">Further Info</h2>
                         <ul className="list-unstyled text-light footer-link-list">
-                            <li><Link className="text-decoration-none" to="/">Home</Link></li>
-                            <li><Link className="text-decoration-none" to="/contact">Contact Us</Link></li>
+                            <li><Link onClick={onClick} className="text-decoration-none" to="/">Home</Link></li>
+                            <li><Link onClick={onClick} className="text-decoration-none" to="/contact">Contact Us</Link></li>
                         </ul>
                     </div>
                 </div>

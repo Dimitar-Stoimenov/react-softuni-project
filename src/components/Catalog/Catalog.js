@@ -15,6 +15,7 @@ const Create = () => {
                 let result = res.sort((a, b) => a.name.localeCompare(b.name))
                 setProducts(result);
                 setBaseProducts(result);
+                window.scrollTo(0, 0);
             })
     }, [])
 
@@ -22,6 +23,7 @@ const Create = () => {
         e.preventDefault();
 
         setProducts(baseProducts);
+        window.scrollTo(0, 0);
     }
 
     const onClickSmartphones = (e) => {
@@ -30,6 +32,7 @@ const Create = () => {
         let myData = [].concat(baseProducts);
         let result = myData.filter(x => 'Smartphones' == x.category);
         setProducts(result);
+        window.scrollTo(0, 0);
     }
 
     const onClickSmartwatches = (e) => {
@@ -38,6 +41,7 @@ const Create = () => {
         let myData = [].concat(baseProducts);
         let result = myData.filter(x => 'Smartwatches' == x.category);
         setProducts(result);
+        window.scrollTo(0, 0);
     }
 
     const onClickAccessories = (e) => {
@@ -46,6 +50,7 @@ const Create = () => {
         let myData = [].concat(baseProducts);
         let result = myData.filter(x => 'Accessories' == x.category);
         setProducts(result);
+        window.scrollTo(0, 0);
     }
 
     const onSortingChange = (e) => {
@@ -68,6 +73,7 @@ const Create = () => {
         }
 
         setProducts(result);
+        window.scrollTo(0, 0);
     }
 
     return (
