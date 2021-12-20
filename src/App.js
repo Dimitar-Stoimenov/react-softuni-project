@@ -5,7 +5,7 @@ import { AuthContext } from './contexts/AuthContext';
 import useLocalStorage from "./hooks/useLocalStorage";
 import TopPageInfo from "./components/TopPageInfo/TopPageInfo";
 import Footer from "./components/Footer/Footer";
-import Contact from "./components/Contact/Contact";
+import Catalog from "./components/Catalog/Catalog";
 import Create from "./components/Create/Create";
 import Login from "./components/Login/Login";
 import Logout from "./components/Logout/Logout";
@@ -14,6 +14,7 @@ import NavigationBar from "./components/NavigationBar/NavigationBar";
 import MostPopularProducts from "./components/MostPopularProducts/MostPopularProducts";
 import MainPicture from "./components/MainPicture/MainPicture";
 import Categories from "./components/Categories/Categories";
+import Contact from "./components/Contact/Contact";
 import MessageReceived from "./components/Contact/MessageReceived/MessageReceived";
 
 const initialAuthState = {
@@ -52,7 +53,7 @@ function App() {
 							</>
 						}
 					/>
-					{/* <Route path="/catalog" element={<Catalog />} /> */}
+					<Route path="/catalog" element={<Catalog />} />
 					<Route path="/catalog/smartphones" element={<>smartphone component</>} />
 					<Route path="/catalog/smartwatches" element={<>smartwatch component</>} />
 					<Route path="/catalog/accessories" element={<>accessorie component</>} />
