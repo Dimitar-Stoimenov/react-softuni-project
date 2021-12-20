@@ -3,7 +3,7 @@ import "./Details.css";
 const Details = () => {
 
     return (
-        <div class="rating">
+        <div className="rating">
             <input type="radio" name="rating" value="5" id="5" />
             <label for="5">☆</label>
             <input type="radio" name="rating" value="4" id="4" />

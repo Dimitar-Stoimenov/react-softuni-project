@@ -21,11 +21,11 @@ const MyProducts = () => {
     }, [])
 
     return (
-        <div class="container py-5">
-            <div class="row">
-                <div class="col-lg-9">
+        <div className="container py-5">
+            <div className="row">
+                <div className="col-lg-9">
 
-                    <div class="row">
+                    <div className="row">
                         {products.length > 0
                             ? products.map(x => <CatalogCard key={x._id} item={x} />)
                             : <p>You have not added any products yet.</p>
