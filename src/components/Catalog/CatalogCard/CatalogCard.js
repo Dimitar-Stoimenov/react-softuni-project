@@ -14,9 +14,9 @@ const CatalogCard = ({
                         </ul>
                     </div>
                 </div>
-                <div class="card-body">
-                    <p href="shop-single.html" class="h3 text-decoration-none">{item.name}</p>
-                    <tc class="float-start">$ {item.price.toFixed(2)}</tc><tc class="text-muted float-end">Liked by {item.likes?.length} people</tc>
+                <div className="card-body">
+                    <p href="shop-single.html" className="h3 text-decoration-none">{item.name}</p>
+                    <span className="float-start">$ {item.price.toFixed(2)}</span><span className="text-muted float-end">Liked by {item.likes?.length} people</span>
                 </div>
             </div>
         </div>
