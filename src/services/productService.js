@@ -13,6 +13,12 @@ export async function create(name, description, price, category, image, token) {
     return await errorCheck(res);
 }
 
+export async function getAll() {
+    let res = await fetch(`${url}/`);
+
+    return await errorCheck(res);
+}
+
 export async function getMostPopular() {
     let res = await fetch(`${url}/most-popular`);
 
