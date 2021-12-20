@@ -13,7 +13,7 @@ const MostPopularProductsCard = ({
                 <div className="card-body">
                     <ul className="list-unstyled d-flex justify-content-between">
                         <li></li>
-                        <li className="text-muted text-right">{product.price} лв.</li>
+                        <li className="text-muted text-right">$ {product.price.toFixed(2)}</li>
                     </ul>
                     <a href="shop-single.html" className="h2 text-decoration-none text-dark">{product.name}</a>
                     <p className="card-text">
