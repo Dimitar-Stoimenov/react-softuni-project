@@ -14,11 +14,34 @@ const Create = () => {
         let { name, description, price, category, image } = Object.fromEntries(new FormData(e.currentTarget));
         let token = user.accessToken;
 
-        create(name, description, price, category, image, token)
-            .then(productData => {
-                navigate('/');
-                //TODO: Change navigation to details page
-            })
+        if (validateInput(name, description, price, category, image, token)) {
+            create(name, description, price, category, image, token)
+                .then(productData => {
+                    navigate('/');
+                    //TODO: Change navigation to details page
+                })
+        };
+
+        function validateInput(name, description, price, category, image) {
+            if (name.length < 4) {
+                alert('Name must be atleast 4 characters long');
+                return false;
+            } else if (description.length < 10) {
+                alert('Description must be atleast 10 characters long');
+                return false;
+            } else if (category == "Choose category...") {
+                alert('Please choose a category');
+                return false;
+            } else if (price <= 0) {
+                alert('Price must be greater than zero');
+                return false;
+            } else if (image == '') {
+                alert('Image is required');
+                return false;
+            }
+
+            return true;
+        }
     }
 
     return (
