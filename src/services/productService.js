@@ -19,6 +19,12 @@ export async function getAll() {
     return await errorCheck(res);
 }
 
+export async function getOne(id) {
+    let res = await fetch(`${url}/${id}`);
+
+    return await errorCheck(res);
+}
+
 export async function getMyProducts(token) {
     let res = await fetch(`${url}/my-products`, {
         method: 'GET',

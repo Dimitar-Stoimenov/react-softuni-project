@@ -6,6 +6,7 @@ import useLocalStorage from "./hooks/useLocalStorage";
 import TopPageInfo from "./components/TopPageInfo/TopPageInfo";
 import Footer from "./components/Footer/Footer";
 import Catalog from "./components/Catalog/Catalog";
+import Details from "./components/Details/Details";
 import Create from "./components/Create/Create";
 import Login from "./components/Login/Login";
 import Logout from "./components/Logout/Logout";
@@ -55,6 +56,7 @@ function App() {
 						}
 					/>
 					<Route path="/catalog" element={<Catalog />} />
+					<Route path="/catalog/:itemId" element={<Details />} />
 					<Route path="/create" element={<Create />} />
 					<Route path="/my-products" element={<MyProducts />} />
 					<Route path="/contact" element={<Contact />} />
