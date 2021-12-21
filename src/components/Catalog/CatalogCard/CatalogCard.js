@@ -5,10 +5,10 @@ const CatalogCard = ({
 }) => {
     return (
         <>
-            <div className="col-md-4">
+            <div className="col-md-4 d-grid">
                 <div className="card mb-4 product-wap rounded-0">
                     <div className="card rounded-0">
-                        <img className="card-img rounded-0 img-fluid" src={item.image} />
+                        <img className="card-img rounded-0 img-fluid"  src={item.image} />
                         <div className="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                             <ul className="list-unstyled">
                                 <Link to={`/catalog/${item._id}`}>
