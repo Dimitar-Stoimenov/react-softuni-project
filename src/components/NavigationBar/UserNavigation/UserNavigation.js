@@ -20,7 +20,7 @@ const UserNavigation = () => {
                     </li>
                     <p></p>
                     <li className="nav-item">
-                        <Link className="nav-link" to={`/profile/${user._id}/orders`}>My Orders</Link>
+                        <Link className="nav-link" to={`/my-orders`}>My Orders</Link>
                     </li>
                     <li className="nav-item bg-light rounded-pill">
                         <Link className="nav-link" to="/logout">Logout</Link>
