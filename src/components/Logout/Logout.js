@@ -3,6 +3,8 @@ import { useContext, useEffect } from "react";
 
 import * as authService from '../../services/authService';
 import { AuthContext } from "../../contexts/AuthContext";
+import { isAuth } from "../../hoc/routeGuards";
+
 
 const Logout = () => {
     const navigate = useNavigate();
@@ -19,4 +21,4 @@ const Logout = () => {
     return null;
 };
 
-export default Logout;
+export default isAuth(Logout);

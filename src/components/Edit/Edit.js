@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 import * as productService from "../../services/productService";
 import { AuthContext } from '../../contexts/AuthContext';
-import { isVendor } from "../../hoc/routeGuards";
+import { isAuth, isVendor } from "../../hoc/routeGuards";
 
 const Edit = () => {
     const [item, setItem] = useState({});
@@ -90,4 +90,4 @@ const Edit = () => {
     );
 }
 
-export default isVendor(Edit);
+export default isAuth(isVendor(Edit));

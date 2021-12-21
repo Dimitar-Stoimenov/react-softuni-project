@@ -29,3 +29,17 @@ export const isVendor = (Component) => {
 
     return WrapperComponent;
 }
+
+export const isGuestOnly = (Component) => {
+
+    const WrapperComponent = (props) => {
+        const { user } = useContext(AuthContext);
+        const isAuthenticated = Boolean(user?._id);
+
+        return !isAuthenticated
+            ? <Component {...props} />
+            : <Navigate to="/" />
+    }
+
+    return WrapperComponent;
+}

@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
 
 import * as authService from '../../services/authService';
+import { isGuestOnly } from "../../hoc/routeGuards";
+
 
 const Login = () => {
     const { login } = useContext(AuthContext);
@@ -53,4 +55,4 @@ const Login = () => {
     );
 }
 
-export default Login;
+export default isGuestOnly(Login);
