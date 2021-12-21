@@ -62,6 +62,7 @@ function App() {
 					<Route path="/register" element={<Register />} />
 					<Route path="/login" element={<Login />} />
 					<Route path="/logout" element={<Logout />} />
+					<Route path="/forbidden" element={<p>You do not have permission to access this page!</p>} />
 				</Routes>
 
 				<Footer />

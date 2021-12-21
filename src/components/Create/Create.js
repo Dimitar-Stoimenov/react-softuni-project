@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { create } from "../../services/productService";
 import { AuthContext } from '../../contexts/AuthContext';
+import { isAuth, isVendor } from "../../hoc/routeGuards";
 
 const Create = () => {
     const { user } = useContext(AuthContext);
@@ -81,4 +82,4 @@ const Create = () => {
     );
 }
 
-export default Create;
+export default isAuth(isVendor(Create));

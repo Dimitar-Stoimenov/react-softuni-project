@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import { AuthContext } from '../../contexts/AuthContext';
 
 import { getMyProducts } from "../../services/productService";
+import { isAuth, isVendor } from "../../hoc/routeGuards";
 
 import CatalogCard from "../Catalog/CatalogCard/CatalogCard";
 
@@ -37,4 +38,4 @@ const MyProducts = () => {
     );
 }
 
-export default MyProducts;
+export default isAuth(isVendor(MyProducts));
