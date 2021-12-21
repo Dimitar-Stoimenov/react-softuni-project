@@ -7,15 +7,16 @@ const MostPopularProductsCard = ({
     return (
         <div className="col-12 col-md-4 mb-4">
             <div className="card h-100">
-                <a href="shop-single.html">
+                <Link to={`/catalog/${item._id}`}>
                     <img src={item.image} className="card-img-top" alt="..." />
-                </a>
+                </Link >
+
                 <div className="card-body">
                     <ul className="list-unstyled d-flex justify-content-between">
                         <li></li>
-                        <li className="text-muted text-right">$ {item.price.toFixed(2)}</li>
+                        <li className="text-muted text-right">$ {item.price}</li>
                     </ul>
-                    <a href="shop-single.html" className="h2 text-decoration-none text-dark">{item.name}</a>
+                        <span className="h2 text-decoration-none text-dark">{item.name}</span>
                     <p className="card-text">
                         {item.description}
                     </p>
