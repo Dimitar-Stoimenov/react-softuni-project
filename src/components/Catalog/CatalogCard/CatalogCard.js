@@ -19,7 +19,7 @@ const CatalogCard = ({
                     </div>
                     <div className="card-body">
                         <p href="shop-single.html" className="h3 text-decoration-none">{item.name}</p>
-                        <span className="float-start">$ {item.price}.00</span><span className="text-muted float-end">Liked by {item.likes?.length} people</span>
+                        <span className="float-start">$ {item.price}</span><span className="text-muted float-end">Liked by {item.likes?.length} people</span>
                     </div>
                 </div>
             </div>

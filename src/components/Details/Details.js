@@ -66,7 +66,7 @@ const Details = () => {
                         <div class="card">
                             <div class="card-body">
                                 <h1 class="h2">{item.name}</h1>
-                                <p class="h3 py-2">$ {item.price}.00</p>
+                                <p class="h3 py-2">$ {item.price}</p>
 
                                 {/* <form action="" method="POST">
                                     { needs onChange click }
