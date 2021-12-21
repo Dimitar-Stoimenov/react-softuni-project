@@ -13,6 +13,19 @@ export async function create(name, description, price, category, image, token) {
     return await errorCheck(res);
 }
 
+export async function edit(name, description, price, category, image, token, itemId) {
+    let res = await fetch(`${url}/${itemId}`, {
+        method: 'PUT',
+        headers: {
+            "Content-Type": 'application/json',
+            'X-Authorization': token,
+        },
+        body: JSON.stringify({ name, description, price, category, image }),
+    });
+
+    return await errorCheck(res);
+}
+
 export async function getAll() {
     let res = await fetch(`${url}/`);
 
@@ -21,6 +34,17 @@ export async function getAll() {
 
 export async function getOne(id) {
     let res = await fetch(`${url}/${id}`);
+
+    return await errorCheck(res);
+}
+
+export const destroy = async (id, token) => {
+    let res = await fetch(`${url}/${id}`, {
+        method: 'DELETE',
+        headers: {
+            'X-Authorization': token,
+        }
+    })
 
     return await errorCheck(res);
 }
