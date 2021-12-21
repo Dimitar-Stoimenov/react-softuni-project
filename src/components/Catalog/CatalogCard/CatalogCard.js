@@ -12,7 +12,7 @@ const CatalogCard = ({
                         <div className="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                             <ul className="list-unstyled">
                                 <Link to={`/catalog/${item._id}`}>
-                                    <li><a className="btn btn-success text-white mt-2" ><i className="far fa-eye"></i></a></li>
+                                    <li><p className="btn btn-success text-white mt-2" ><i className="far fa-eye"></i></p></li>
                                 </Link>
                             </ul>
                         </div>
