@@ -24,7 +24,7 @@ const MostPopularProducts = () => {
                 </div>
                 <div className="row">
 
-                    {products.map(x => <MostPopularProductsCard key={x._id} product={x} />)}
+                    {products.map(x => <MostPopularProductsCard key={x._id} item={x} />)}
 
                 </div>
             </div>
