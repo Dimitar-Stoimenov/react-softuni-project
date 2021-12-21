@@ -7,7 +7,7 @@ import { AuthContext } from "../../contexts/AuthContext";
 
 const Details = () => {
     //TODO: add rating system
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
     const { user } = useContext(AuthContext);
     const [item, setItem] = useState({});
     const { itemId } = useParams();
@@ -19,13 +19,24 @@ const Details = () => {
             });
     }, [itemId]);
 
+    const deleteHandler = (e) => {
+        e.preventDefault();
+
+        if (window.confirm('Are you sure you want to delete this item?')) {
+            productService.destroy(itemId, user.accessToken)
+                .then(() => {
+                    navigate('/catalog');
+                });
+        }
+    };
+
     const UserFormComponent = () => {
         //TODO: add to cart on click
         return (
             <form method="POST">
-                <div class="row pb-3">
-                    <div class="col d-grid">
-                        <button type="submit" class="btn btn-success btn-lg" name="submit"
+                <div className="row pb-3">
+                    <div className="col d-grid">
+                        <button type="submit" className="btn btn-success btn-lg" name="submit"
                             value="addtocard">Add To Cart</button>
                     </div>
                 </div>
@@ -34,39 +45,41 @@ const Details = () => {
     }
 
     const VendorFormComponent = () => {
-        //TODO: edit and delete
+        //TODO: edit
         return (
-            <form method="POST">
-                <div class="row pb-3">
-                    <div class="col d-grid">
-                        <button type="submit" class="btn btn-success btn-lg" name="submit"
-                            value="addtocard">Edit</button>
+            <div>
+                <div className="row pb-3">
+                    <div className="col d-grid">
+                        <Link to={`/catalog/${item._id}/edit`}>
+                            <button className="btn btn-success btn-lg" name="submit"
+                                value="addtocard">Edit</button>
+                        </Link>
                     </div>
-                    <div class="col d-grid">
-                        <button type="submit" class="btn btn-success btn-lg" name="submit"
+                    <div className="col d-grid">
+                        <button onClick={deleteHandler} className="btn btn-success btn-lg" name="submit"
                             value="addtocard">Delete</button>
                     </div>
                 </div>
-            </form>
+            </div>
         );
     }
 
     return (
-        <section class="bg-light">
-            <div class="container pb-5">
-                <div class="row">
-                    <div class="col-lg-5 mt-5">
-                        <div class="card mb-3">
-                            <img class="card-img img-fluid" src={item.image} alt="Card image cap"
+        <section className="bg-light">
+            <div className="container pb-5">
+                <div className="row">
+                    <div className="col-lg-5 mt-5">
+                        <div className="card mb-3">
+                            <img className="card-img img-fluid" src={item.image} alt="Card image cap"
                                 id="product-detail" />
                         </div>
 
                     </div>
-                    <div class="col-lg-7 mt-5">
-                        <div class="card">
-                            <div class="card-body">
-                                <h1 class="h2">{item.name}</h1>
-                                <p class="h3 py-2">$ {item.price}</p>
+                    <div className="col-lg-7 mt-5">
+                        <div className="card">
+                            <div className="card-body">
+                                <h1 className="h2">{item.name}</h1>
+                                <p className="h3 py-2">$ {item.price}</p>
 
                                 {/* <form action="" method="POST">
                                     { needs onChange click }
@@ -86,6 +99,9 @@ const Details = () => {
 
                                 <h6>Description:</h6>
                                 <p>{item.description}</p>
+
+                                <h6>Category:</h6>
+                                <p>{item.category}</p>
 
                                 {user.email
                                     ? user.isVendor
