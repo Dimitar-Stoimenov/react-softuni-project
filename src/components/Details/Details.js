@@ -6,7 +6,8 @@ import * as productService from '../../services/productService';
 import { AuthContext } from "../../contexts/AuthContext";
 
 const Details = () => {
-    const navigate = useNavigate();
+    //TODO: add rating system
+    // const navigate = useNavigate();
     const { user } = useContext(AuthContext);
     const [item, setItem] = useState({});
     const { itemId } = useParams();
@@ -98,8 +99,6 @@ const Details = () => {
                 </div>
             </div>
         </section>
-
-
     );
 }
 
