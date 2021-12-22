@@ -41,7 +41,6 @@ const Details = () => {
     };
 
     const UserFormComponent = () => {
-        //TODO: add to cart on click
         return (
             <form method="POST">
                 <div className="row pb-3">
