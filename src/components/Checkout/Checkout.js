@@ -21,7 +21,7 @@ const Checkout = () => {
                             </div>
 
                             {cart.cartItems.length > 0
-                                ? cart.cartItems.map(x => <CheckoutCard key={cart.cartItems.indexOf(x) * Math.random(.52)} item={x} />)
+                                ? cart.cartItems.map(x => <CheckoutCard key={(cart.cartItems.indexOf(x) + 1) * Math.random(.52)} item={x} />)
                                 : <p>No products added yet.</p>
                             }
 

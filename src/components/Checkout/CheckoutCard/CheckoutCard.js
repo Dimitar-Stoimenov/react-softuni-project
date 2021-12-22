@@ -41,7 +41,7 @@ const CheckoutCard = ({
 
                             <td>
                                 <h4>
-                                    ${item.price}
+                                    $ {item.price}
                                 </h4>
                             </td>
                         </tr>
