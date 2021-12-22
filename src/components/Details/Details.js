@@ -26,7 +26,7 @@ const Details = () => {
     const addToCartHandler = (e) => {
         e.preventDefault();
 
-        addToCart(itemId);
+        addToCart(item);
     }
 
     const deleteHandler = (e) => {
