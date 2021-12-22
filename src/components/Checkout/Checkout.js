@@ -1,5 +1,5 @@
 import { isAuth } from "../../hoc/routeGuards";
-
+import { Link } from "react-router-dom";
 
 import './Checkout.css';
 
@@ -42,8 +42,6 @@ const Checkout = () => {
                                                     </dl>
 
                                                     <div className="m-t-sm">
-                                                        <a href="#" className="text-muted"><i className="fa fa-gift"></i> Add gift package</a>
-                                                        |
                                                         <a href="#" className="text-muted"><i className="fa fa-trash"></i> Remove item</a>
                                                     </div>
                                                 </td>
@@ -89,8 +87,6 @@ const Checkout = () => {
                                                     </dl>
 
                                                     <div className="m-t-sm">
-                                                        <a href="#" className="text-muted"><i className="fa fa-gift"></i> Add gift package</a>
-                                                        |
                                                         <a href="#" className="text-muted"><i className="fa fa-trash"></i> Remove item</a>
                                                     </div>
                                                 </td>
@@ -138,8 +134,6 @@ const Checkout = () => {
                                                     </dl>
 
                                                     <div className="m-t-sm">
-                                                        <a href="#" className="text-muted"><i className="fa fa-gift"></i> Add gift package</a>
-                                                        |
                                                         <a href="#" className="text-muted"><i className="fa fa-trash"></i> Remove item</a>
                                                     </div>
                                                 </td>
@@ -185,8 +179,6 @@ const Checkout = () => {
                                                     </dl>
 
                                                     <div className="m-t-sm">
-                                                        <a href="#" className="text-muted"><i className="fa fa-gift"></i> Add gift package</a>
-                                                        |
                                                         <a href="#" className="text-muted"><i className="fa fa-trash"></i> Remove item</a>
                                                     </div>
                                                 </td>
@@ -231,8 +223,6 @@ const Checkout = () => {
                                                         <dd>A description list is perfect for defining terms.</dd>
                                                     </dl>
                                                     <div className="m-t-sm">
-                                                        <a href="#" className="text-muted"><i className="fa fa-gift"></i> Add gift package</a>
-                                                        |
                                                         <a href="#" className="text-muted"><i className="fa fa-trash"></i> Remove item</a>
                                                     </div>
                                                 </td>
@@ -252,7 +242,7 @@ const Checkout = () => {
                             </div>
                             <div className="ibox-content">
                                 <button className="btn btn-primary pull-right"><i className="fa fa fa-shopping-cart"></i> Checkout</button>
-                                <button className="btn btn-white"><i className="fa fa-arrow-left"></i> Continue shopping</button>
+                                <Link to="/catalog"><button className="btn btn-white"><i className="fa fa-arrow-left"></i> Continue shopping</button></Link>
 
                             </div>
                         </div>
@@ -272,9 +262,7 @@ const Checkout = () => {
                                 </h2>
 
                                 <hr />
-                                <span className="text-muted small">
-                                    *For United States, France and Germany applicable sales tax will be applied
-                                </span>
+                                
                                 <div className="m-t-sm">
                                     <div className="btn-group">
                                         <a href="#" className="btn btn-primary btn-sm"><i className="fa fa-shopping-cart"></i> Checkout</a>
@@ -289,7 +277,7 @@ const Checkout = () => {
                                 <h5>Support</h5>
                             </div>
                             <div className="ibox-content text-center">
-                                <h3><i className="fa fa-phone"></i> +43 100 783 001</h3>
+                                <h3><i className="fa fa-phone"></i> +359-888-123-456</h3>
                                 <span className="small">
                                     Please contact with us if you have any questions. We are avalible 24h.
                                 </span>
