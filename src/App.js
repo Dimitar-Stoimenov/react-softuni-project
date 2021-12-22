@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Routes, Route } from 'react-router-dom';
 
 import { AuthContext } from './contexts/AuthContext';
+import { CartContext } from "./contexts/CartContext";
 import useLocalStorage from "./hooks/useLocalStorage";
 import TopPageInfo from "./components/TopPageInfo/TopPageInfo";
 import Footer from "./components/Footer/Footer";
@@ -26,8 +27,14 @@ const initialAuthState = {
 	accessToken: '',
 };
 
+const intialCartState = {
+	itemCount: 0,
+	cartItems: [],
+}
+
 function App() {
 	const [user, setUser] = useLocalStorage('user', initialAuthState);
+	const [cart, setCart] = useLocalStorage('cart', intialCartState);
 
 	const login = (authData) => {
 		let { accessToken, email, _id, isVendor } = authData;
@@ -41,38 +48,41 @@ function App() {
 
 	return (
 		<AuthContext.Provider value={{ user, login, logout }}>
+			<CartContext.Provider value={{ cart }}>
 
-			<div id="main">
-				<TopPageInfo />
-				<NavigationBar />
+				<div id="main">
+					<TopPageInfo />
+					<NavigationBar />
 
-				<Routes>
-					<Route path="/"
-						element={
-							<>
-								<MainPicture />
-								<Categories />
-								<MostPopularProducts />
-							</>
-						}
-					/>
-					<Route path="/catalog" element={<Catalog />} />
-					<Route path="/catalog/:itemId" element={<Details />} />
-					<Route path="/catalog/:itemId/edit" element={<Edit />} />
-					<Route path="/create" element={<Create />} />
-					<Route path="/my-products" element={<MyProducts />} />
-					<Route path="/contact" element={<Contact />} />
-					<Route path="/contact/message-received" element={<MessageReceived />} />
-					<Route path="/register" element={<Register />} />
-					<Route path="/login" element={<Login />} />
-					<Route path="/logout" element={<Logout />} />
-					<Route path="/forbidden" element={<p>You do not have permission to access this page!</p>} />
-				</Routes>
+					<Routes>
+						<Route path="/"
+							element={
+								<>
+									<MainPicture />
+									<Categories />
+									<MostPopularProducts />
+								</>
+							}
+						/>
+						<Route path="/catalog" element={<Catalog />} />
+						<Route path="/catalog/:itemId" element={<Details />} />
+						<Route path="/catalog/:itemId/edit" element={<Edit />} />
+						<Route path="/create" element={<Create />} />
+						<Route path="/my-products" element={<MyProducts />} />
+						<Route path="/contact" element={<Contact />} />
+						<Route path="/contact/message-received" element={<MessageReceived />} />
+						<Route path="/register" element={<Register />} />
+						<Route path="/login" element={<Login />} />
+						<Route path="/logout" element={<Logout />} />
+						<Route path="/forbidden" element={<p>You do not have permission to access this page!</p>} />
+					</Routes>
 
-				<Footer />
-				<script src="/js/bootstrap.bundle.min.js"></script>
-				<script src="/js/templatemo.js"></script>
-			</div>
+					<Footer />
+					<script src="/js/bootstrap.bundle.min.js"></script>
+					<script src="/js/templatemo.js"></script>
+				</div>
+				
+			</CartContext.Provider>
 		</AuthContext.Provider>
 	);
 }
