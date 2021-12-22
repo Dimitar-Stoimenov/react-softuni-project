@@ -19,7 +19,7 @@ const NavigationBar = () => {
             <div className={divClassList}>
 
                 <Link className={linkClassList} to="/">
-                    Zay
+                    ThinkTech
                 </Link>
 
                 {user.email

@@ -23,7 +23,7 @@ const Footer = () => {
                             </li>
                             <li>
                                 <i className="fa fa-envelope fa-fw"></i>
-                                <a className="text-decoration-none" href="mailto:info@company.com">info@company.com</a>
+                                <a className="text-decoration-none" href="mailto:info@thinktech.com">info@thinktech.com</a>
                             </li>
                         </ul>
                     </div>
@@ -64,7 +64,7 @@ const Footer = () => {
                     <div>
                         <div className="col-12">
                             <p className="text-left text-light">
-                                Copyright &copy; 2021 Zay Ltd.
+                                Copyright &copy; 2021 ThinkTech Ltd.
                             </p>
                         </div>
                     </div>

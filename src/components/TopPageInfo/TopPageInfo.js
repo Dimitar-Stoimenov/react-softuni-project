@@ -5,7 +5,7 @@ const TopPageInfo = () => {
                 <div className="w-100 d-flex justify-content-between">
                     <div>
                         <i className="fa fa-envelope mx-2"></i>
-                        <a className="navbar-sm-brand text-light text-decoration-none" href="mailto:info@company.com">info@company.com</a>
+                        <a className="navbar-sm-brand text-light text-decoration-none" href="mailto:info@thinktech.com">info@thinktech.com</a>
                         <i className="fa fa-phone mx-2"></i>
                         <a className="navbar-sm-brand text-light text-decoration-none" href="tel:+359-888-123-456">+359-888-123-456</a>
                     </div>
