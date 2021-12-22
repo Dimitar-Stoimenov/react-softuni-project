@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 import { useState, useEffect } from "react";
 import { getAll } from "../../services/productService";
 
