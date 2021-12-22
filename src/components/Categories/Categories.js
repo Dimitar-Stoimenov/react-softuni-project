@@ -1,13 +1,11 @@
 import { Link } from "react-router-dom";
 
 const Categories = () => {
-    //TODO: CHANGE PICTURES!
     return (
         <section className="container py-5">
             <div className="row text-center pt-3">
                 <div className="col-lg-6 m-auto">
                     <h1 className="h1">Categories</h1>
-
                 </div>
             </div>
             <div className="row">

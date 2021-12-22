@@ -3,7 +3,10 @@ import { Link } from "react-router-dom";
 const MostPopularProductsCard = ({
     item,
 }) => {
-    //TODO: fix link to details
+    let ratingSum = item.likes[1].reduce((a, b) => Number(a) + Number(b), 0);
+    let averageRatingToFixed = (ratingSum/item.likes[1].length).toFixed(2);
+    let isNaNChecker = isNaN(averageRatingToFixed);
+    
     return (
         <div className="col-12 col-md-4 mb-4">
             <div className="card h-100">
@@ -16,11 +19,11 @@ const MostPopularProductsCard = ({
                         <li></li>
                         <li className="text-muted text-right">$ {item.price}</li>
                     </ul>
-                        <span className="h2 text-decoration-none text-dark">{item.name}</span>
+                    <span className="h2 text-decoration-none text-dark">{item.name}</span>
                     <p className="card-text">
                         {item.description}
                     </p>
-                    <p className="text-muted">Liked by {item.likes.length} {item.likes.length == 1 ? 'person' : 'people'}</p>
+                    <p className="text-muted float-end">{!isNaNChecker ? averageRatingToFixed + ' rating' : 'No rating yet'}</p>
                 </div>
             </div>
         </div>

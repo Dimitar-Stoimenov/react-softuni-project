@@ -1,14 +1,14 @@
 import { useContext, useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
-import * as productService from "../../services/productService";
 import { AuthContext } from '../../contexts/AuthContext';
 import { isAuth, isVendor } from "../../hoc/routeGuards";
+import * as productService from "../../services/productService";
 
 const Edit = () => {
-    const [item, setItem] = useState({});
-    const { user } = useContext(AuthContext);
     const navigate = useNavigate();
+    const { user } = useContext(AuthContext);
+    const [item, setItem] = useState({});
     const { itemId } = useParams();
 
     useEffect(() => {

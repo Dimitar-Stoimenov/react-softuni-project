@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import MostPopularProductsCard from './MostPopularProductsCard/MostPopularProductsCard';
 import { getMostPopular } from "../../services/productService";
 
+import './MostPopularProducts.css';
+
 const MostPopularProducts = () => {
     const [products, setProducts] = useState([]);
 
@@ -15,7 +17,7 @@ const MostPopularProducts = () => {
     }, []);
 
     return (
-        <section>
+        <section className="grеyish-background">
             <div className="container py-5">
                 <div className="row text-center py-3">
                     <div className="col-lg-6 m-auto">

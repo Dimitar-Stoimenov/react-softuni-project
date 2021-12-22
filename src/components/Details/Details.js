@@ -1,12 +1,12 @@
-import "./Details.css";
-
 import { useState, useEffect, useContext } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
-import * as productService from '../../services/productService';
+
 import { AuthContext } from "../../contexts/AuthContext";
+import * as productService from '../../services/productService';
+
+import "./Details.css";
 
 const Details = () => {
-    //TODO: add rating system
     const navigate = useNavigate();
     const { user } = useContext(AuthContext);
     const [item, setItem] = useState({});
@@ -45,7 +45,6 @@ const Details = () => {
     }
 
     const VendorFormComponent = () => {
-        //TODO: edit
         return (
             <div>
                 <div className="row pb-3">
@@ -62,6 +61,22 @@ const Details = () => {
                 </div>
             </div>
         );
+    }
+
+    const onRatingClick = (e) => {
+        let rating = (e.currentTarget.value);
+        console.log(rating);
+        //TODO: Make it work!
+        //productService.pushRating(itemId, rating, user) 
+        //server guard from multiple entries
+        //check if Object.assign works properly with the nested arrays
+        //Then navigate to same page to reload
+    }
+
+    const ratingValidator = () => {
+        const likedByUser = item.likes[0].includes(user.email);
+
+        return likedByUser;
     }
 
     return (
@@ -81,21 +96,27 @@ const Details = () => {
                                 <h1 className="h2">{item.name}</h1>
                                 <p className="h3 py-2">$ {item.price}</p>
 
-                                {/* <form action="" method="POST">
-                                    { needs onChange click }
-                                    <div className="rating">
-                                        <input type="radio" name="rating" value="5" id="5" />
-                                        <label for="5">☆</label>
-                                        <input type="radio" name="rating" value="4" id="4" />
-                                        <label for="4">☆</label>
-                                        <input type="radio" name="rating" value="3" id="3" />
-                                        <label for="3">☆</label>
-                                        <input type="radio" name="rating" value="2" id="2" />
-                                        <label for="2">☆</label>
-                                        <input type="radio" name="rating" value="1" id="1" /><label for="1">☆</label>
-                                        <ul className="col d-grid">Rate this product:</ul>
-                                    </div>
-                                </form> */}
+                                {user.email && !user.isVendor
+                                    ? !ratingValidator()
+                                        ?
+                                        <>
+                                            <form action="" method="POST">
+                                                <div className="rating">
+                                                    <input onClick={onRatingClick} type="radio" name="rating" value="5" id="5" />
+                                                    <label htmlFor="5">☆</label>
+                                                    <input onClick={onRatingClick} type="radio" name="rating" value="4" id="4" />
+                                                    <label htmlFor="4">☆</label>
+                                                    <input onClick={onRatingClick} type="radio" name="rating" value="3" id="3" />
+                                                    <label htmlFor="3">☆</label>
+                                                    <input onClick={onRatingClick} type="radio" name="rating" value="2" id="2" />
+                                                    <label htmlFor="2">☆</label>
+                                                    <input onClick={onRatingClick} type="radio" name="rating" value="1" id="1" /><label htmlFor="1">☆</label>
+                                                    <ul className="col d-grid">Rate this product:</ul>
+                                                </div>
+                                            </form>
+                                        </>
+                                        : 'You have already voted!'
+                                    : ''}
 
                                 <h6>Description:</h6>
                                 <p>{item.description}</p>

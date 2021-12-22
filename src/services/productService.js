@@ -13,6 +13,21 @@ export async function create(name, description, price, category, image, token) {
     return await errorCheck(res);
 }
 
+export async function pushRating(item, rating, user) {
+    //TODO: add functionality
+
+    let res = await fetch(`${url}/${item.itemId}`, {
+        method: 'PUT',
+        headers: {
+            "Content-Type": 'application/json',
+            'X-Authorization': user.token,
+        },
+        body: JSON.stringify(item),
+    });
+
+    return await errorCheck(res);
+}
+
 export async function edit(name, description, price, category, image, token, itemId) {
     let res = await fetch(`${url}/${itemId}`, {
         method: 'PUT',
