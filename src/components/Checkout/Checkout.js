@@ -58,7 +58,7 @@ const Checkout = () => {
                             <div className="ibox-content text-center">
                                 <h3><i className="fa fa-phone"></i> +359-888-123-456</h3>
                                 <span className="small">
-                                    Please contact with us if you have any questions. We are avalible 24h.
+                                    Please contact us if you have any questions. We are available 24h.
                                 </span>
                             </div>
                         </div>
