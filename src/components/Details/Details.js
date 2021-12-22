@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 
 import { AuthContext } from "../../contexts/AuthContext";
+import { CartContext } from "../../contexts/CartContext";
 import * as productService from '../../services/productService';
 
 import "./Details.css";
@@ -9,6 +10,7 @@ import "./Details.css";
 const Details = () => {
     const navigate = useNavigate();
     const { user } = useContext(AuthContext);
+    const { addToCart } = useContext(CartContext);
     const [item, setItem] = useState({});
     const { itemId } = useParams();
     const [voted, setVoted] = useState(false);
@@ -20,6 +22,12 @@ const Details = () => {
                 window.scrollTo(0, 0);
             });
     }, [itemId])
+
+    const addToCartHandler = (e) => {
+        e.preventDefault();
+
+        addToCart(itemId);
+    }
 
     const deleteHandler = (e) => {
         e.preventDefault();
@@ -38,7 +46,7 @@ const Details = () => {
             <form method="POST">
                 <div className="row pb-3">
                     <div className="col d-grid">
-                        <button type="submit" className="btn btn-success btn-lg" name="submit"
+                        <button onClick={addToCartHandler} type="submit" className="btn btn-success btn-lg" name="submit"
                             value="addtocard">Add To Cart</button>
                     </div>
                 </div>

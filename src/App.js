@@ -39,16 +39,28 @@ function App() {
 	const login = (authData) => {
 		let { accessToken, email, _id, isVendor } = authData;
 
+		setCart(intialCartState);
 		setUser({ accessToken, email, _id, isVendor });
 	};
 
 	const logout = () => {
+		setCart(intialCartState);
 		setUser(initialAuthState);
+	};
+
+	const addToCart = (itemId) => {
+		let updated = {
+			itemCount: cart.itemCount + 1,
+			cartItems: cart.cartItems,
+		};
+		updated.cartItems.push(itemId);
+
+		setCart(updated);
 	};
 
 	return (
 		<AuthContext.Provider value={{ user, login, logout }}>
-			<CartContext.Provider value={{ cart }}>
+			<CartContext.Provider value={{ cart, addToCart }}>
 
 				<div id="main">
 					<TopPageInfo />
@@ -81,7 +93,7 @@ function App() {
 					<script src="/js/bootstrap.bundle.min.js"></script>
 					<script src="/js/templatemo.js"></script>
 				</div>
-				
+
 			</CartContext.Provider>
 		</AuthContext.Provider>
 	);
