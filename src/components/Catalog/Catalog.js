@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { getAll } from "../../services/productService";
 
 import CatalogCard from "./CatalogCard/CatalogCard";
+import calculateRating from "../../services/calculateRating";
 
 const Create = () => {
     const [baseProducts, setBaseProducts] = useState([]);
@@ -67,8 +68,17 @@ const Create = () => {
             case 'byPriceHighest':
                 result = myData.sort((a, b) => b.price - (a.price));
                 break;
-            default: //TODO: filter by rating
-                result = myData.sort((a, b) => a.name.localeCompare(b.name));
+            default:
+                result = myData.sort((a, b) => {
+                    let aRating = calculateRating(a);
+                    let bRating = calculateRating(b);
+
+                    if (bRating === aRating) {
+                        return b.voters.length - a.voters.length;
+                    }
+
+                    return bRating - aRating;
+                });
                 break;
         }
 
