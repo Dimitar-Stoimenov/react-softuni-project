@@ -31,7 +31,7 @@ const UserNavigation = () => {
                 </ul>
             </div>
             <div className="navbar align-self-center d-flex">
-                <Link className="nav-icon position-relative text-decoration-none" to="/cart">
+                <Link className="nav-icon position-relative text-decoration-none" to="/checkout">
                     <i className="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
                     <span className="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">{cart.itemCount > 0 ? cart.itemCount : ''}</span>
                 </Link>

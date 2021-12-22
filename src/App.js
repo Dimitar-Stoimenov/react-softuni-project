@@ -9,6 +9,7 @@ import Footer from "./components/Footer/Footer";
 import Catalog from "./components/Catalog/Catalog";
 import Details from "./components/Details/Details";
 import Create from "./components/Create/Create";
+import Checkout from "./components/Checkout/Checkout";
 import Edit from "./components/Edit/Edit";
 import Login from "./components/Login/Login";
 import Logout from "./components/Logout/Logout";
@@ -81,6 +82,7 @@ function App() {
 						<Route path="/catalog/:itemId/edit" element={<Edit />} />
 						<Route path="/create" element={<Create />} />
 						<Route path="/my-products" element={<MyProducts />} />
+						<Route path="/checkout" element={<Checkout />} />
 						<Route path="/contact" element={<Contact />} />
 						<Route path="/contact/message-received" element={<MessageReceived />} />
 						<Route path="/register" element={<Register />} />
