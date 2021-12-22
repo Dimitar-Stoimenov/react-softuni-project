@@ -1,6 +1,9 @@
 import { useState, useEffect, useContext } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 
+import 'react-notifications/lib/notifications.css';
+import { NotificationManager } from 'react-notifications';
+
 import { AuthContext } from "../../contexts/AuthContext";
 import { CartContext } from "../../contexts/CartContext";
 import * as productService from '../../services/productService';
@@ -45,7 +48,7 @@ const Details = () => {
             <form method="POST">
                 <div className="row pb-3">
                     <div className="col d-grid">
-                        <button onClick={addToCartHandler} type="submit" className="btn btn-success btn-lg" name="submit"
+                        <button onClick={(e) => { e.preventDefault(); addToCartHandler(e); showNotification(); }} type="submit" className="btn btn-success btn-lg" name="submit"
                             value="addtocard">Add To Cart</button>
                     </div>
                 </div>
@@ -95,6 +98,10 @@ const Details = () => {
             return false;
         }
     }
+
+    const showNotification = () => {
+        NotificationManager.success(`${item.name} has been added to your cart!`, "", 2500);
+    };
 
     return (
         <section className="bg-light">

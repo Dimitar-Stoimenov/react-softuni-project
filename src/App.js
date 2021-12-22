@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import { Routes, Route } from 'react-router-dom';
 
+import 'react-notifications/lib/notifications.css';
+import { NotificationContainer } from 'react-notifications';
+
 import { AuthContext } from './contexts/AuthContext';
 import { CartContext } from "./contexts/CartContext";
 import useLocalStorage from "./hooks/useLocalStorage";
@@ -82,6 +85,7 @@ function App() {
 			<CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
 
 				<div id="main">
+					<NotificationContainer />
 					<TopPageInfo />
 					<NavigationBar />
 
