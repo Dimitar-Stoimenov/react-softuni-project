@@ -10,6 +10,7 @@ import Catalog from "./components/Catalog/Catalog";
 import Details from "./components/Details/Details";
 import Create from "./components/Create/Create";
 import Checkout from "./components/Checkout/Checkout";
+import CheckoutSuccessful from "./components/Checkout/CheckoutCard/CheckoutSucessful";
 import Edit from "./components/Edit/Edit";
 import Login from "./components/Login/Login";
 import Logout from "./components/Logout/Logout";
@@ -31,6 +32,7 @@ const initialAuthState = {
 const intialCartState = {
 	itemCount: 0,
 	cartItems: [],
+	totalPrice: 0,
 }
 
 function App() {
@@ -49,19 +51,35 @@ function App() {
 		setUser(initialAuthState);
 	};
 
-	const addToCart = (itemId) => {
+	const addToCart = (item) => {
 		let updated = {
 			itemCount: cart.itemCount + 1,
 			cartItems: cart.cartItems,
+			totalPrice: cart.totalPrice + item.price,
 		};
-		updated.cartItems.push(itemId);
+		updated.cartItems.push(item);
+
+		setCart(updated);
+	};
+
+	const removeFromCart = (item) => {
+		let updated = {
+			itemCount: cart.itemCount - 1,
+			cartItems: cart.cartItems,
+			totalPrice: cart.totalPrice - item.price,
+		};
+
+		let index = updated.cartItems.indexOf(item);
+		if (index > -1) {
+			updated.cartItems.splice(index, 1);
+		}
 
 		setCart(updated);
 	};
 
 	return (
 		<AuthContext.Provider value={{ user, login, logout }}>
-			<CartContext.Provider value={{ cart, addToCart }}>
+			<CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
 
 				<div id="main">
 					<TopPageInfo />
@@ -83,6 +101,7 @@ function App() {
 						<Route path="/create" element={<Create />} />
 						<Route path="/my-products" element={<MyProducts />} />
 						<Route path="/checkout" element={<Checkout />} />
+						<Route path="/order-complete" element={<CheckoutSuccessful />} />
 						<Route path="/contact" element={<Contact />} />
 						<Route path="/contact/message-received" element={<MessageReceived />} />
 						<Route path="/register" element={<Register />} />
