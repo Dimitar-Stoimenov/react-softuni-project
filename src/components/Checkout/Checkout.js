@@ -52,9 +52,7 @@ const Checkout = () => {
                                                     $180,00
                                                     <s className="small text-muted">$230,00</s>
                                                 </td>
-                                                <td width="65">
-                                                    <input type="text" className="form-control" placeholder="1" />
-                                                </td>
+                                                
                                                 <td>
                                                     <h4>
                                                         $180,00
@@ -101,9 +99,7 @@ const Checkout = () => {
                                                     $50,00
                                                     <s className="small text-muted">$63,00</s>
                                                 </td>
-                                                <td width="65">
-                                                    <input type="text" className="form-control" placeholder="2" />
-                                                </td>
+                                                
                                                 <td>
                                                     <h4>
                                                         $100,00
@@ -151,9 +147,7 @@ const Checkout = () => {
                                                 <td>
                                                     $110,00
                                                 </td>
-                                                <td width="65">
-                                                    <input type="text" className="form-control" placeholder="1" />
-                                                </td>
+                                                
                                                 <td>
                                                     <h4>
                                                         $110,00
@@ -200,9 +194,7 @@ const Checkout = () => {
                                                 <td>
                                                     $130,00
                                                 </td>
-                                                <td width="65">
-                                                    <input type="text" className="form-control" placeholder="1" />
-                                                </td>
+                                               
                                                 <td>
                                                     <h4>
                                                         $130,00
@@ -247,9 +239,7 @@ const Checkout = () => {
                                                 <td>
                                                     $700,00
                                                 </td>
-                                                <td width="65">
-                                                    <input type="text" className="form-control" placeholder="1" />
-                                                </td>
+                                                
                                                 <td>
                                                     <h4>
                                                         $70,00
