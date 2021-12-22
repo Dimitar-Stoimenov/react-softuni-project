@@ -18,8 +18,7 @@ const Create = () => {
         if (validateInput(name, description, price, category, image, token)) {
             create(name, description, price, category, image, token)
                 .then(productData => {
-                    navigate('/');
-                    //TODO: Change navigation to details page
+                    navigate('/catalog/' + productData._id);
                 })
         };
 
