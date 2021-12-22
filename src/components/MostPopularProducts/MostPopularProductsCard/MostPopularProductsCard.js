@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom";
+import calculateRating from "../../../services/calculateRating";
 
 const MostPopularProductsCard = ({
     item,
 }) => {
-    let ratingSum = item.likes[1].reduce((a, b) => Number(a) + Number(b), 0);
-    let averageRatingToFixed = (ratingSum/item.likes[1].length).toFixed(2);
-    let isNaNChecker = isNaN(averageRatingToFixed);
-    
+    let rating = calculateRating(item);
+
     return (
         <div className="col-12 col-md-4 mb-4">
             <div className="card h-100">
@@ -23,7 +22,7 @@ const MostPopularProductsCard = ({
                     <p className="card-text">
                         {item.description}
                     </p>
-                    <p className="text-muted float-end">{!isNaNChecker ? averageRatingToFixed + ' rating' : 'No rating yet'}</p>
+                    <p className="text-muted float-end">{rating ? rating + ' rating' : 'No rating yet'}</p>
                 </div>
             </div>
         </div>

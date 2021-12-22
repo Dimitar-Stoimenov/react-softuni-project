@@ -14,13 +14,14 @@ export async function create(name, description, price, category, image, token) {
 }
 
 export async function pushRating(item, rating, user) {
-    //TODO: add functionality
+    item.voters.push(user._id);
+    item.ratings.push(rating);
 
-    let res = await fetch(`${url}/${item.itemId}`, {
+    let res = await fetch(`${url}/ratings/${item._id}`, {
         method: 'PUT',
         headers: {
             "Content-Type": 'application/json',
-            'X-Authorization': user.token,
+            'X-Authorization': user.accessToken,
         },
         body: JSON.stringify(item),
     });

@@ -11,13 +11,15 @@ const Details = () => {
     const { user } = useContext(AuthContext);
     const [item, setItem] = useState({});
     const { itemId } = useParams();
+    const [voted, setVoted] = useState(false);
 
     useEffect(() => {
         productService.getOne(itemId)
             .then(itemResult => {
                 setItem(itemResult);
+                window.scrollTo(0, 0);
             });
-    }, [itemId]);
+    }, [itemId])
 
     const deleteHandler = (e) => {
         e.preventDefault();
@@ -65,18 +67,26 @@ const Details = () => {
 
     const onRatingClick = (e) => {
         let rating = (e.currentTarget.value);
-        console.log(rating);
-        //TODO: Make it work!
-        //productService.pushRating(itemId, rating, user) 
-        //server guard from multiple entries
-        //check if Object.assign works properly with the nested arrays
-        //Then navigate to same page to reload
+
+        if (hasUserVoted()) {
+            setVoted(true);
+            return alert('You have already voted for this item!');
+        }
+
+        setVoted(true);
+        productService.pushRating(item, rating, user);
     }
 
-    const ratingValidator = () => {
-        const likedByUser = item.likes[0].includes(user.email);
-
-        return likedByUser;
+    const hasUserVoted = () => {
+        if (typeof item.voters !== undefined) {
+            if (item.voters.length > 0) {
+                return item.voters.includes(user._id);
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
     }
 
     return (
@@ -97,25 +107,23 @@ const Details = () => {
                                 <p className="h3 py-2">$ {item.price}</p>
 
                                 {user.email && !user.isVendor
-                                    ? !ratingValidator()
-                                        ?
-                                        <>
-                                            <form action="" method="POST">
-                                                <div className="rating">
-                                                    <input onClick={onRatingClick} type="radio" name="rating" value="5" id="5" />
-                                                    <label htmlFor="5">☆</label>
-                                                    <input onClick={onRatingClick} type="radio" name="rating" value="4" id="4" />
-                                                    <label htmlFor="4">☆</label>
-                                                    <input onClick={onRatingClick} type="radio" name="rating" value="3" id="3" />
-                                                    <label htmlFor="3">☆</label>
-                                                    <input onClick={onRatingClick} type="radio" name="rating" value="2" id="2" />
-                                                    <label htmlFor="2">☆</label>
-                                                    <input onClick={onRatingClick} type="radio" name="rating" value="1" id="1" /><label htmlFor="1">☆</label>
-                                                    <ul className="col d-grid">Rate this product:</ul>
-                                                </div>
-                                            </form>
-                                        </>
-                                        : 'You have already voted!'
+                                    ? <>
+                                        <form className={voted ? 'hidden' : undefined} action="" method="POST">
+                                            <div className="rating">
+                                                <input onClick={onRatingClick} type="radio" name="rating" value="5" id="5" />
+                                                <label htmlFor="5">☆</label>
+                                                <input onClick={onRatingClick} type="radio" name="rating" value="4" id="4" />
+                                                <label htmlFor="4">☆</label>
+                                                <input onClick={onRatingClick} type="radio" name="rating" value="3" id="3" />
+                                                <label htmlFor="3">☆</label>
+                                                <input onClick={onRatingClick} type="radio" name="rating" value="2" id="2" />
+                                                <label htmlFor="2">☆</label>
+                                                <input onClick={onRatingClick} type="radio" name="rating" value="1" id="1" /><label htmlFor="1">☆</label>
+                                                <ul className="col d-grid">Rate this product:</ul>
+                                            </div>
+                                        </form>
+                                    </>
+
                                     : ''}
 
                                 <h6>Description:</h6>

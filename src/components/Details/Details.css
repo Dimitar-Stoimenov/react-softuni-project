@@ -3,6 +3,8 @@
     border-bottom-left-radius: 12px
 }
 
+.hidden { display:none; }
+
 .rating {
     display: flex;
     flex-direction: row-reverse;

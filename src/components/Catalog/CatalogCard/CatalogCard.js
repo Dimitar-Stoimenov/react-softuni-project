@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 
+import calculateRating from '../../../services/calculateRating';
+
 const CatalogCard = ({
     item,
 }) => {
-    let ratingSum = item.likes[1].reduce((a, b) => Number(a) + Number(b), 0);
-    let averageRatingToFixed = (ratingSum/item.likes[1].length).toFixed(2);
-    let isNaNChecker = isNaN(averageRatingToFixed);
+    let rating = calculateRating(item);
 
     return (
         <>
@@ -23,7 +23,7 @@ const CatalogCard = ({
                     </div>
                     <div className="card-body">
                         <p href="shop-single.html" className="h3 text-decoration-none">{item.name}</p>
-                        <span className="float-start">$ {item.price}</span><span className="text-muted float-end">{!isNaNChecker ? averageRatingToFixed + ' rating' : 'No rating yet'}</span>
+                        <span className="float-start">$ {item.price}</span><span className="text-muted float-end">{rating ? rating + ' rating' : 'No rating yet'}</span>
                     </div>
                 </div>
             </div>
