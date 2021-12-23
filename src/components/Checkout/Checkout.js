@@ -1,13 +1,33 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
+import { create } from "../../services/orderService";
 import { isAuth } from "../../hoc/routeGuards";
 
+import { AuthContext } from "../../contexts/AuthContext";
 import { CartContext } from "../../contexts/CartContext";
 import CheckoutCard from "./CheckoutCard/CheckoutCard";
-
 import './Checkout.css';
 
 const Checkout = () => {
-    const { cart } = useContext(CartContext);
+    const { cart, resetCart } = useContext(CartContext);
+    const { user } = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    const createSubmitHandler = (e) => {
+        e.preventDefault();
+
+        let token = user.accessToken;
+        let userId = user._id;
+        let itemList = cart.itemList;
+        let price = cart.totalPrice;
+
+        create(userId, itemList, price, token)
+            .then(orderData => {
+                resetCart();
+                navigate('/order-complete');
+            })
+    }
 
     return (
         <div className="container">
@@ -45,7 +65,7 @@ const Checkout = () => {
 
                                 <div className="m-t-sm">
                                     <div className="btn-group">
-                                        <a href="#" className="btn btn-primary btn-sm"><i className="fa fa-shopping-cart"></i> Checkout</a>
+                                        <a onClick={createSubmitHandler} className="btn btn-primary btn-sm"><i className="fa fa-shopping-cart"></i> Checkout</a>
                                     </div>
                                 </div>
                             </div>

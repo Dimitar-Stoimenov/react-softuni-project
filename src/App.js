@@ -54,6 +54,10 @@ function App() {
 		setUser(initialAuthState);
 	};
 
+	const resetCart = () => {
+		setCart({ ...intialCartState, cartItems: [] });
+	}
+
 	const addToCart = (item) => {
 		let updated = {
 			itemCount: cart.itemCount + 1,
@@ -82,7 +86,7 @@ function App() {
 
 	return (
 		<AuthContext.Provider value={{ user, login, logout }}>
-			<CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
+			<CartContext.Provider value={{ cart, addToCart, removeFromCart, resetCart }}>
 
 				<div id="main">
 					<NotificationContainer />
