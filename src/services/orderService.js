@@ -13,8 +13,6 @@ export async function create(userId, itemList, price, token) {
     return await errorCheck(res);
 }
 
-
-
 async function errorCheck(response) {
     try {
         if (response.ok == false) {

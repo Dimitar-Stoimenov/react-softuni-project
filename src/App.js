@@ -22,6 +22,7 @@ import NavigationBar from "./components/NavigationBar/NavigationBar";
 import MostPopularProducts from "./components/MostPopularProducts/MostPopularProducts";
 import MainPicture from "./components/MainPicture/MainPicture";
 import MyProducts from "./components/MyProducts/MyProducts";
+import MyOrders from "./components/MyOrders/MyOrders";
 import Categories from "./components/Categories/Categories";
 import Contact from "./components/Contact/Contact";
 import MessageReceived from "./components/Contact/MessageReceived/MessageReceived";
@@ -108,6 +109,7 @@ function App() {
 						<Route path="/catalog/:itemId/edit" element={<Edit />} />
 						<Route path="/create" element={<Create />} />
 						<Route path="/my-products" element={<MyProducts />} />
+						<Route path="/my-orders" element={<MyOrders />} />
 						<Route path="/checkout" element={<Checkout />} />
 						<Route path="/order-complete" element={<CheckoutSuccessful />} />
 						<Route path="/contact" element={<Contact />} />
