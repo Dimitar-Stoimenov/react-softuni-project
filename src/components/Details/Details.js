@@ -83,6 +83,8 @@ const Details = () => {
             return alert('You have already voted for this item!');
         }
 
+        showRatingNotification();
+
         setVoted(true);
         productService.pushRating(item, rating, user);
     }
@@ -101,6 +103,10 @@ const Details = () => {
 
     const showNotification = () => {
         NotificationManager.success(`${item.name} has been added to your cart!`, "", 2500);
+    };
+
+    const showRatingNotification = () => {
+        NotificationManager.success(`You have successfully voted for ${item.name}!`, "", 2500);
     };
 
     return (
