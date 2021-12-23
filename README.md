@@ -2,7 +2,7 @@
 
 https://react-project-defense-silentyo.web.app/
 
-# I'm using a custom built nodeJS server hosted on Heroku, along MongoDB Atlas database.
+## I'm using a custom built nodeJS server hosted on Heroku, along with a MongoDB Atlas database.
 
 
 
