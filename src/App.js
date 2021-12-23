@@ -46,12 +46,12 @@ function App() {
 	const login = (authData) => {
 		let { accessToken, email, _id, isVendor } = authData;
 
-		setCart(intialCartState);
+		resetCart();
 		setUser({ accessToken, email, _id, isVendor });
 	};
 
 	const logout = () => {
-		setCart(intialCartState);
+		resetCart();
 		setUser(initialAuthState);
 	};
 
