@@ -1,4 +1,4 @@
-const url = 'http://localhost:3030/data/catalog';
+const url = 'https://react-project-defense.herokuapp.com/data/catalog';
 
 export async function create(name, description, price, category, image, token) {
     let res = await fetch(`${url}`, {

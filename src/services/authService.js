@@ -1,4 +1,4 @@
-const url = 'http://localhost:3030/users';
+const url = 'https://react-project-defense.herokuapp.com/users';
 
 export const login = async (email, password) => {
     let res = await fetch(`${url}/login`, {
