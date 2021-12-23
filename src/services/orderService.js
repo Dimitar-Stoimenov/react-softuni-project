@@ -13,6 +13,18 @@ export async function create(userId, itemList, price, token) {
     return await errorCheck(res);
 }
 
+export async function getMyOrders(token) {
+    let res = await fetch(`${url}`, {
+        method: 'GET',
+        headers: {
+            "Content-Type": 'application/json',
+            'X-Authorization': token,
+        },
+    });
+
+    return await errorCheck(res);
+}
+
 async function errorCheck(response) {
     try {
         if (response.ok == false) {
