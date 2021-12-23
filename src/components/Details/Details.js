@@ -49,7 +49,11 @@ const Details = () => {
                 <div className="row pb-3">
                     <div className="col d-grid">
                         <button onClick={(e) => { e.preventDefault(); addToCartHandler(e); showNotification(); }} type="submit" className="btn btn-success btn-lg" name="submit"
-                            value="addtocard">Add To Cart</button>
+                            value="addtocart">Add To Cart</button>
+                    </div>
+                    <div className="col d-grid">
+                        <Link to="/checkout"> <button className="btn btn-success btn-lg" name="submit"
+                            value="gotocart">Go To Your Cart</button></Link>
                     </div>
                 </div>
             </form>
