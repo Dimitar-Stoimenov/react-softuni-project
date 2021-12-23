@@ -1,6 +1,13 @@
-# Getting Started with Create React App
+# You can access this app on:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+https://react-project-defense-silentyo.web.app/
+
+# I'm using a custom built nodeJS server hosted on Heroku, along MongoDB Atlas database.
+
+
+
+
+
 
 ## Available Scripts
 
